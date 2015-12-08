@@ -339,9 +339,11 @@ function sand(){
 window.addEventListener("load", function(){
   cardCollector();
   createCards();
+  
 });
 
 var activeTags = [];
+var activeTagging = [];
 
 function cardCollector(){
 	if(tagsList.length != 0){
@@ -350,14 +352,12 @@ function cardCollector(){
 			var a = tagsList.splice(randNum, 1);
 			// var a = tagsList[randNum].name;
 			activeTags = activeTags.concat(a);
+      activeTagging = activeTagging.concat(a);
 			// activeTags.push(a);
 	// console.log(activeTags);
 	// console.log(tagsList);
 		}
 	} else {}
-
-	// console.log(activeTags);
-	// console.log(tagsList);
 }
 
 function createCards(){
@@ -379,7 +379,6 @@ function createCards(){
     card.style.left = leftPos + "%";
 
     sec.appendChild(card);
-    // card.addEventListener("click", shift);
     marginBoost = marginBoost + 75;
     zIndex = (Number(zIndex) - 500).toString();
     cardW = (Number(cardW) - 10).toString();
@@ -396,6 +395,11 @@ function createCards(){
     var cardHeaderImg = document.createElement('div');
     cardHeaderImg.setAttribute('class', 'cardHeaderImg');
     cardHeader.appendChild(cardHeaderImg);
+
+    cardHeaderImg.addEventListener('click', function(){
+        document.body.appendChild(getResultTestCon);
+        returns();
+    });
     
     var cardImgSection = document.createElement('div');
     cardImgSection.setAttribute('class', 'cardImgSection');
@@ -429,7 +433,7 @@ function createCards(){
     var cardDecisionYesCon = document.createElement('div');
     cardDecisionYesCon.setAttribute('class', 'cardDecisionYesCon');
     cardDecision.appendChild(cardDecisionYesCon);
-     cardDecisionYesCon.addEventListener('click', shift);
+     cardDecisionYesCon.addEventListener('click', filter);
 
     var cardDecisionYes = document.createElement('div');
     cardDecisionYes.setAttribute('class', 'cardDecisionYes');
@@ -437,13 +441,69 @@ function createCards(){
 
   }
 
+    var getResultTestCon = document.createElement('div');
+    getResultTestCon.setAttribute('class', 'getResultTestCon');
+    // document.body.appendChild(getResultTestCon);
+
+    var getResultTest = document.createElement('div');
+    getResultTest.setAttribute('class', 'getResultTest');
+    getResultTestCon.appendChild(getResultTest);
+
+    var getReTitle = document.createElement('div');
+    getReTitle.setAttribute('class', 'getReTitle');
+    getResultTest.appendChild(getReTitle);
+
+    var getReTitleText = document.createTextNode("Are you sure?");
+    getReTitle.appendChild(getReTitleText);
+
+    var getReButton1Con = document.createElement('div');
+    getReButton1Con.setAttribute('class', 'resultBtn1Con');
+    getResultTest.appendChild(getReButton1Con);
+
+    var getReButton1 = document.createElement('div');
+    getReButton1.setAttribute('class', 'resultBtn1');
+    getReButton1Con.appendChild(getReButton1);
+
+    var reBtnText1 = document.createTextNode("FIND MY DESTINATION");
+    getReButton1.appendChild(reBtnText1);
+
+    var getReButton2Con = document.createElement('div');
+    getReButton2Con.setAttribute('class', 'resultBtn2Con');
+    getResultTest.appendChild(getReButton2Con);
+
+    var getReButton2 = document.createElement('div');
+    getReButton2.setAttribute('class', 'resultBtn2');
+    getReButton2Con.appendChild(getReButton2);
+
+    var reBtnText2 = document.createTextNode("KEEP SEARCHING");
+    getReButton2.appendChild(reBtnText2);
+
+}
+
+
+
+function filter(ev){
+    console.log("workingBefore --------------------------------");
+    console.log(activeTagging[0].name);
+    checkTag(activeTagging[0].name);
+    console.log("workingAfter ----------------------------------");
+    setTimeout(function(){
+        shift(ev);
+    }, 200);
+
+}
+
+function returns(){
+    var btn1 = document.querySelector(".resultBtn1Con");
+    console.log(btn1);
+  btn1.addEventListener("click", function(){
+    getResult();
+  })
 }
 
 
 var counter = 1;
 function shift(ev){
-
-		console.log("clicked");
 
 		var firstChild = ev.target.closest('.cards:first-child');
 		var cardContainerFirst = ev.target.closest('.cardContainer:first-child');
@@ -460,6 +520,7 @@ function shift(ev){
 		switch(counter) {
 			case 1:
 				activeTags.splice(0,3);
+        activeTagging.splice(0,1);
 
 				if(tagsList.length != 0) {
 				for(i=0; i < 3; i++) {
@@ -467,6 +528,7 @@ function shift(ev){
 					var a = tagsList.splice(randNum, 1);
 					// var a = tagsList[randNum].name;
 					activeTags = activeTags.concat(a);
+          activeTagging = activeTagging.concat(a);
 					// activeTags.push(a);
 					}
 				} else {}
@@ -476,20 +538,20 @@ function shift(ev){
 
 			case 2:
 				activeTags.splice(0,1);
+        activeTagging.splice(0,1);
+
 				if(tagsList.length != 0) {
 				for(i=0; i < 1; i++) {
 					randNum = Math.floor(Math.random() * tagsList.length);
 					var a = tagsList.splice(randNum, 1);
 					// var a = tagsList[randNum].name;
 					activeTags = activeTags.concat(a);
+          activeTagging = activeTagging.concat(a);
 					// activeTags.push(a);
 					}
 				} else {}
 				break;
 		}
-
-		console.log(activeTags);
-		console.log(tagsList);
 
 		setTimeout(function(){
 			for(i=0; i<3; i++){
@@ -532,6 +594,11 @@ function shift(ev){
 		    var cardHeaderImg = document.createElement('div');
 		    cardHeaderImg.setAttribute('class', 'cardHeaderImg');
 		    cardHeader.appendChild(cardHeaderImg);
+
+        cardHeaderImg.addEventListener('click', function(){
+        document.body.appendChild(getResultTestCon);
+        returns();
+        });
 		    
 		    var cardImgSection = document.createElement('div');
 		    cardImgSection.setAttribute('class', 'cardImgSection');
@@ -565,12 +632,12 @@ function shift(ev){
 		    var cardDecisionYesCon = document.createElement('div');
 		    cardDecisionYesCon.setAttribute('class', 'cardDecisionYesCon');
 		    cardDecision.appendChild(cardDecisionYesCon);
-		    cardDecisionYesCon.addEventListener('click', shift);
-		    // 	console.log("workingBefore");
-		    // 	checkTag(activeTags[0].name);
-		    // 	console.log("working");
-		    // 	shift();
-		    // });
+		    cardDecisionYesCon.addEventListener('click', filter)
+        //   console.log("workingBefore");
+        //   checkTag(activeTags[0].name);
+        //   console.log("working");
+        //   shift();
+        // });
 
 		    var cardDecisionYes = document.createElement('div');
 		    cardDecisionYes.setAttribute('class', 'cardDecisionYes');
@@ -580,6 +647,42 @@ function shift(ev){
 		    	card.style.opacity = "1";
 		    }, 200);
 		}, 1200);
+  
+      var getResultTestCon = document.createElement('div');
+    getResultTestCon.setAttribute('class', 'getResultTestCon');
+    // document.body.appendChild(getResultTestCon);
 
+    var getResultTest = document.createElement('div');
+    getResultTest.setAttribute('class', 'getResultTest');
+    getResultTestCon.appendChild(getResultTest);
+
+    var getReTitle = document.createElement('div');
+    getReTitle.setAttribute('class', 'getReTitle');
+    getResultTest.appendChild(getReTitle);
+
+    var getReTitleText = document.createTextNode("Are you sure?");
+    getReTitle.appendChild(getReTitleText);
+
+    var getReButton1Con = document.createElement('div');
+    getReButton1Con.setAttribute('class', 'resultBtn1Con');
+    getResultTest.appendChild(getReButton1Con);
+
+    var getReButton1 = document.createElement('div');
+    getReButton1.setAttribute('class', 'resultBtn1');
+    getReButton1Con.appendChild(getReButton1);
+
+    var reBtnText1 = document.createTextNode("FIND MY DESTINATION");
+    getReButton1.appendChild(reBtnText1);
+
+    var getReButton2Con = document.createElement('div');
+    getReButton2Con.setAttribute('class', 'resultBtn2Con');
+    getResultTest.appendChild(getReButton2Con);
+
+    var getReButton2 = document.createElement('div');
+    getReButton2.setAttribute('class', 'resultBtn2');
+    getReButton2Con.appendChild(getReButton2);
+
+    var reBtnText2 = document.createTextNode("KEEP SEARCHING");
+    getReButton2.appendChild(reBtnText2);
 
 	} 
