@@ -147,7 +147,7 @@ tagsList.push(architecture);
 var artGalleries = new Tags("artGalleries", "img/tags/artMuseums.svg", "", "Immerse yourself in art?");
 tagsList.push(artGalleries);
 
-var auroraBorealis = new Tags("auroraBorealis", "img/tags/auroraBorealis", "", "Witness the Aurora Borealis?");
+var auroraBorealis = new Tags("auroraBorealis", "img/tags/auroraBorealis.svg", "", "Witness the Aurora Borealis?");
 tagsList.push(auroraBorealis);
 
 var baseball = new Tags("baseball", "img/tags/baseball.svg", "", "Go out to the ball game?");
@@ -309,7 +309,8 @@ function getResult(){
      
   for(x=0;x<cities.length;x++){
     if(winNum == cities[x].value){
-      alert(cities[x].name);
+      var winner = document.querySelector('.resultsPageImg');
+      // winner.style.background = "url(" + 
     }
   }
 }
@@ -350,12 +351,8 @@ function cardCollector(){
 		for(i=0; i < 3; i++){
 			randNum = Math.floor(Math.random() * tagsList.length);
 			var a = tagsList.splice(randNum, 1);
-			// var a = tagsList[randNum].name;
 			activeTags = activeTags.concat(a);
       activeTagging = activeTagging.concat(a);
-			// activeTags.push(a);
-	// console.log(activeTags);
-	// console.log(tagsList);
 		}
 	} else {}
 }
@@ -443,7 +440,6 @@ function createCards(){
 
     var getResultTestCon = document.createElement('div');
     getResultTestCon.setAttribute('class', 'getResultTestCon');
-    // document.body.appendChild(getResultTestCon);
 
     var getResultTest = document.createElement('div');
     getResultTest.setAttribute('class', 'getResultTest');
@@ -478,6 +474,15 @@ function createCards(){
     var reBtnText2 = document.createTextNode("KEEP SEARCHING");
     getReButton2.appendChild(reBtnText2);
 
+    var resultsPage = document.createElement('div');
+    resultsPage.setAttribute('class', 'resultsPage');
+    document.body.appendChild(resultsPage);
+    resultsPage.style.display = "none";
+
+    var resultsPageImg = document.createElement('div');
+    resultsPageImg.setAttribute('class', 'resultsPageImg');
+    resultsPage.appendChild(resultsPageImg);
+
 }
 
 
@@ -495,9 +500,19 @@ function filter(ev){
 
 function returns(){
     var btn1 = document.querySelector(".resultBtn1Con");
-    console.log(btn1);
+    var tests = document.querySelector(".getResultTestCon");
+    var results = document.querySelector('.resultsPage');
+    var cards = document.querySelectorAll('.cards');
+    console.log(cards);
+
   btn1.addEventListener("click", function(){
-    getResult();
+    // getResult();
+    tests.remove();
+    results.style.display = "flex";
+    for(i=0;i<cards.length;i++){
+      cards[i].style.display = "none";
+      console.log(cards[i]);
+    }
   })
 }
 
@@ -648,7 +663,7 @@ function shift(ev){
 		    }, 200);
 		}, 1200);
   
-      var getResultTestCon = document.createElement('div');
+    var getResultTestCon = document.createElement('div');
     getResultTestCon.setAttribute('class', 'getResultTestCon');
     // document.body.appendChild(getResultTestCon);
 
