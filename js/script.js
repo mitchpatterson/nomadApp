@@ -322,26 +322,14 @@ function getResult(){
 //
 /////////////////////////////////////////////////////////
 
-function snow(){
-  checkTag("snow");
-}
-
-function sand(){
-  checkTag("sand");
-}
-
-/////////////////////////////////////////////////////////
-//
-// functions below are used to attach to cards and are 
-//		triggered on swipe events
-//
-/////////////////////////////////////////////////////////
-
-window.addEventListener("load", function(){
+function beginApp(){
+  var wrap = document.querySelector('header');
+  var wrap2 = document.querySelector('#wrapper');
+  wrap.style.display = "none";
+  wrap2.style.display = "flex";
   cardCollector();
-  createCards();
-  
-});
+  createCards(); 
+};
 
 var activeTags = [];
 var activeTagging = [];
