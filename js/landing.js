@@ -44,19 +44,50 @@ window.onload = function () {
 		var google = document.getElementById('google');
 		var facebook = document.getElementById('facebook');
 		var social = [twitter, google, facebook];
+		//Toggle apperance for social sharing
 		switch (counter) {
 		case 0:
+			//Display On
 			social[0].style.display = 'block';
 			social[1].style.display = 'block';
 			social[2].style.display = 'block';
+			setTimeout(function () {
+				social[2].style.opacity = '1';
+			}, 200);
+			setTimeout(function () {
+				social[1].style.opacity = '1';
+			}, 275);
+			setTimeout(function () {
+				social[0].style.opacity = '1';
+			}, 350);
 			counter = 1;
 			break;
 		case 1:
-			social[0].style.display = 'none';
-			social[1].style.display = 'none';
-			social[2].style.display = 'none';
+			//Display off
+			setTimeout(function () {
+				social[0].style.display = 'none';
+				social[1].style.display = 'none';
+				social[2].style.display = 'none';
+			}, 1000);
+			setTimeout(function () {
+				social[0].style.opacity = '0';
+			}, 200);
+			setTimeout(function () {
+				social[1].style.opacity = '0';
+			}, 275);
+			setTimeout(function () {
+				social[2].style.opacity = '0';
+			}, 350);
 			counter = 0;
 			break;
+		}
+		for (var i = 0; i < social.length; i++) {
+			social[i].addEventListener('mouseover', function () {
+				this.style.opacity = '0.5';
+			});
+			social[i].addEventListener('mouseout', function () {
+				this.style.opacity = '1';
+			});
 		}
 
 	});
