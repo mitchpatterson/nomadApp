@@ -1,22 +1,108 @@
 <!Doctype html>
 <html>
 <head>
+	<title>Explor | Welcome</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/landing.css">
+	<link rel="stylesheet" type="text/css" href="css/animations.css">
+	<link rel="stylesheet" type="text/css" href="css/header.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/about.css">
+	<link rel="stylesheet" type="text/css" href="css/contact.css">
+	<link rel="stylesheet" type="text/css" href="css/footer.css">
+	<link rel="stylesheet" type="text/css" href="css/social.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,900' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Karla:400,700' rel='stylesheet' type='text/css'>
 	<script src="js/script.js"></script>
+	<script src="js/landing.js"></script>
 </head>
 <body>
-	<header>
-		<section id="headerContainer">
-			<div id="logoContainer">
+	<div class="wrap">
+		<div class="header">
+			<nav>
+				<div class="header_logo">
+					<a href="#">
+						<h1>Explor</h1>
+					</a>
+				</div>
+				<div class="primary-nav">
+					<ul>
+						<li><a href="#" id='about_link'>What is explor?</a></li>
+						<li><a href="#" id='contact_link'>Contact</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="main">
+			<div class="logo"></div>
+			<div class="main_heading">
+				<a href="#">
+					<h1>Explor</h1>
+				</a>
 			</div>
-			<div id="title"> 
+			<div class="content">
+				<p>Find a new way to explore.</p>
 			</div>
-			<div id="startApp" onclick="beginApp()">Start
+			<div class="start-button">
+				<button>Let's Start!</button>
 			</div>
-		</section>
-	</header>
+		</div>
+		<div class="about" id="about">
+			<div class="close">
+				<a href="#" id='close'>
+				</a>
+			</div>
+			<div class="content">
+				<h1>What is Explor?</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum interdum elementum nisi sed vestibulum. Aliquam orci metus, elementum nec leo sit amet, elementum ultrices ipsum. Nulla eu varius sapien, sit amet elementum massa. Nam imperdiet finibus mi, ultricies euismod justo pulvinar ac. Quisque ac egestas sapien. Maecenas non congue ex. </p>
+			</div>
+		</div>
+		<div class="contact" id="contact">
+			<div class="close">
+				<a href="#" id='closee'>
+				</a>
+			</div>
+			<div class="content">
+				<h1>Borys Petriczko</h1>
+				<a href="#">email@email.com</a>
+				<h1>Mitchell Patterson</h1>
+				<a href="#">email@email.com</a>
+				<h1>Paul Golebiewski</h1>
+				<a href="#">email@email.com</a>
+			</div>
+		</div>
+	</div>
+	<div class="social">
+		<ul>
+			<li>
+				<div class="twitter" id="twitter">
+					<div class="icon" id="icon"></div>
+				</div>
+			</li>
+			<li>
+				<div class="google" id="google">
+					<div class="icon" id="icon"></div>
+				</div>
+			</li>
+			<li>
+				<div class="facebook" id="facebook">
+					<div class="icon" id="icon"></div>
+				</div>
+			</li>
+			<li>
+				<div class="share" id="share">
+					<div class="icon" id="icon"></div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<footer>
+		<div class="content">
+			<p>Developed and designed by <a href="#">Mitchell Patterson</a>, <a href="#">Paul Golebiewski</a> & <a href="#">Borys Petriczko.</a></p>
+			<p id="shoutOut">Shout out to <a href="#">Interactive Media Management</a> & <a href="#">Sheridan</a></p>
+		</div>
+	</footer>
 	<div id="wrapper">	
 	  <section id="section">
 	  </section>
