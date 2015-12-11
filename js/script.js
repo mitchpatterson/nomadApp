@@ -323,7 +323,7 @@ function getResult(){
 /////////////////////////////////////////////////////////
 
 function beginApp(){
-  var wrap = document.querySelector('header');
+  var wrap = document.querySelector('.wrap');
   var wrap2 = document.querySelector('#wrapper');
   wrap.style.display = "none";
   wrap2.style.display = "flex";
