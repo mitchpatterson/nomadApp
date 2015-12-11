@@ -1,0 +1,22 @@
+	@media only screen and (max-width: 768px) {
+		.wrap {
+			background-size: auto 100%;
+		}
+		.main {
+			width: 500px;
+			margin-top: 40%;
+		}
+		.main .logo {
+			width: auto;
+			height: 350px;
+			background-size: auto 350px;
+		}
+		.main .main_heading {
+			width: 100%;
+			text-align: center;
+		}
+		.main a h1 {
+			font-size: 52px;
+			width: 100%;
+		}
+	}
