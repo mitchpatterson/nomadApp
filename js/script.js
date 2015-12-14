@@ -462,15 +462,6 @@ function createCards(){
     var reBtnText2 = document.createTextNode("KEEP SEARCHING");
     getReButton2.appendChild(reBtnText2);
 
-    var resultsPage = document.createElement('div');
-    resultsPage.setAttribute('class', 'resultsPage');
-    document.body.appendChild(resultsPage);
-    resultsPage.style.display = "none";
-
-    var resultsPageImg = document.createElement('div');
-    resultsPageImg.setAttribute('class', 'resultsPageImg');
-    resultsPage.appendChild(resultsPageImg);
-
 }
 
 
@@ -489,6 +480,7 @@ function filter(ev){
 function returns(){
     var btn1 = document.querySelector(".resultBtn1Con");
     var tests = document.querySelector(".getResultTestCon");
+    var resultsCon = document.querySelector('#resultsPage-wrap');
     var results = document.querySelector('.resultsPage');
     var cards = document.querySelectorAll('.cards');
     console.log(cards);
@@ -496,7 +488,7 @@ function returns(){
   btn1.addEventListener("click", function(){
     // getResult();
     tests.remove();
-    results.style.display = "flex";
+    resultsCon.style.display = "flex";
     for(i=0;i<cards.length;i++){
       cards[i].style.display = "none";
       console.log(cards[i]);
