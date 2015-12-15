@@ -1,8 +1,17 @@
+.mainContainer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .main {
 	width: 300px;
 	height: auto;
-	margin: 0 auto;
-	margin-top: 8%;
 }
 
 .main .logo {
