@@ -325,8 +325,10 @@ function getResult(){
 function beginApp(){
   var main = document.querySelector('.main');
   var cardsSection = document.querySelector('.cardsSection');
+  var cardsContainer = document.querySelector('#cardsContainer');
   main.style.display = "none";
   cardsSection.style.display = "flex";
+  cardsContainer.style.opacity = "1";
   cardCollector();
   createCards(); 
 };
@@ -355,8 +357,6 @@ function createCards(){
   for(i=0;i<activeTags.length;i++){
     var card = document.createElement('div');
     card.setAttribute('class', 'cards');
-    card.style.position = "absolute";
-    card.style.backgroundColor = "darkturquoise";
     card.style.bottom = marginBoost + "px";
     card.style.zIndex = zIndex;
     card.style.width = cardW + "%";
@@ -567,9 +567,7 @@ function shift(ev){
 			var card = document.createElement('div');
 			var sec = document.querySelector('#cardsContainer');
 			card.setAttribute('class', 'cards');
-		    card.style.position = "absolute";
 		    card.style.bottom = "150px";
-		    card.style.backgroundColor = "darkturquoise";
 		    card.style.zIndex = "4000";
 		    card.style.width = "80%";
 		    card.style.height = "80%";
