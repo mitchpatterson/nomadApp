@@ -5,118 +5,119 @@
 //
 /////////////////////////////////////////////////////////
 
-function City(nm, val, col, tag) {
+function City(nm, country, val, bg, tag) {
   this.name = nm;
   this.value = val;
-  this.color = col;
+  this.bg = bg;
   this.tags = tag;
+  this.country = country;
 }
 
 var cities = [];
 
-var toronto = new City("toronto", 0, "", ["multicultural", "nightLife", "skiSnowboard", "shopping", "hockey", "baseball", "basketball", "beer"]);
+var toronto = new City("Toronto", "Canada", 0, "img/cities/lineCities_toronto.svg", ["multicultural", "nightLife", "skiSnowboard", "shopping", "hockey", "baseball", "basketball", "beer"]);
 cities.push(toronto);
 
-var vancouver = new City("vancouver", 0, "", ["skiSnowboard", "mountains", "hiking", "multicultural", "aquariums", "hockey", "sailing", "scubaDiving"]);
+var vancouver = new City("Vancouver", "Canada", 0, "img/cities/lineCities_vancouver.svg", ["skiSnowboard", "mountains", "hiking", "multicultural", "aquariums", "hockey", "sailing", "scubaDiving"]);
 cities.push(vancouver);
 
-var montreal = new City("montreal", 0, "", ["shopping", "nightLife", "hockey", "skiSnowboard", "artGalleries", "concerts", "cathedrals", "architecture"]);
+var montreal = new City("Montreal", "Canada", 0, "img/cities/lineCities_montreal.svg", ["shopping", "nightLife", "hockey", "skiSnowboard", "artGalleries", "concerts", "cathedrals", "architecture"]);
 cities.push(montreal);
 
-var newYorkCity = new City("newYorkCity", 0, "", ['shopping', 'nightLife', 'fashion', 'basketball', 'baseball', 'concerts', 'multicultural', 'architecture']);
+var newYorkCity = new City("New York City", "USA", 0, "img/cities/lineCities_newYorkCity.svg", ['shopping', 'nightLife', 'fashion', 'basketball', 'baseball', 'concerts', 'multicultural', 'architecture']);
 cities.push(newYorkCity);
 
-var nashville = new City("nashville", 0, "", ["countryMusic", 'beer', 'hockey', 'football', 'museums', 'concerts', 'nightLife', 'architecture']);
+var nashville = new City("Nashville", "USA", 0, "img/cities/lineCities_nashville.svg", ["countryMusic", 'beer', 'hockey', 'football', 'museums', 'concerts', 'nightLife', 'architecture']);
 cities.push(nashville);
 
-var chicago = new City("chicago", 0, "", ['pizza', 'hockey', 'baseball', 'artGalleries', 'shopping', 'museums', 'architecture', 'beaches']);
+var chicago = new City("Chicago", "USA", 0, "img/cities/lineCities_chicago.svg", ['pizza', 'hockey', 'baseball', 'artGalleries', 'shopping', 'museums', 'architecture', 'beaches']);
 cities.push(chicago);
 
-var losAngeles = new City("losAngeles", 0, "", ['palmTrees', 'beaches', 'shopping', 'fashion', 'surfing', 'nightLife', 'hockey', 'multicultural']);
+var losAngeles = new City("LosAngeles", "USA", 0, "img/cities/lineCities_losAngeles.svg", ['palmTrees', 'beaches', 'shopping', 'fashion', 'surfing', 'nightLife', 'hockey', 'multicultural']);
 cities.push(losAngeles);
 
-var amsterdam = new City("amsterdam", 0, "", ['artGalleries', 'museums', 'legalizedMarijuana', 'nightLife', 'beer', 'concerts', 'shopping', 'multicultural']);
+var amsterdam = new City("Amsterdam", "Netherlands", 0, "img/cities/lineCities_amsterdam.svg", ['artGalleries', 'museums', 'legalizedMarijuana', 'nightLife', 'beer', 'concerts', 'shopping', 'multicultural']);
 cities.push(amsterdam);
 
-var stockholm = new City("stockholm", 0, "", ['hockey', 'skiSnowboard', 'beer', 'architecture', 'museums', 'nightlife', 'concerts', 'auroraBorealis']);
+var stockholm = new City("Stockholm", "Sweden", 0, "img/cities/lineCities_stockholm.svg", ['hockey', 'skiSnowboard', 'beer', 'architecture', 'museums', 'nightlife', 'concerts', 'auroraBorealis']);
 cities.push(stockholm);
 
-var copenhagen = new City("copenhagen", 0, "", ['architecture', 'castles', 'museums', 'artGalleries', 'aquariums', 'beer', 'sailing', 'shopping']);
+var copenhagen = new City("Copenhagen", "Denmark", 0, "img/cities/lineCities_copenhagen.svg", ['architecture', 'castles', 'museums', 'artGalleries', 'aquariums', 'beer', 'sailing', 'shopping']);
 cities.push(copenhagen);
 
-var marrakech = new City("marrakech", 0, "", ['mosques', 'museums', 'openMarkets', 'mountains', 'nightLife', 'dry', 'exotic animals', 'beaches']);
+var marrakech = new City("Marrakech", "Morocco", 0, "img/cities/lineCities_marrakech.svg", ['mosques', 'museums', 'openMarkets', 'mountains', 'nightLife', 'dry', 'exotic animals', 'beaches']);
 cities.push(marrakech);
 
-var siemReap = new City("siemReap", 0, "", ['ancientRuins', 'wildlife', 'museums', 'legalizedMarijuana', 'jungles', 'palmTrees', 'exoticAnimals']);
+var siemReap = new City("Siem Reap", "Cambodia", 0, "img/cities/lineCities_siemReap.svg", ['ancientRuins', 'wildlife', 'museums', 'legalizedMarijuana', 'jungles', 'palmTrees', 'exoticAnimals']);
 cities.push(siemReap);
 
-var istanbul = new City("istanbul", 0, "", ['openMarkets', 'museums', 'architecture', 'mosques', 'castles', 'nightLife', 'beaches', 'ancientRuins']);
+var istanbul = new City("Istanbul", "Turkey", 0, "img/cities/lineCities_istanbul.svg", ['openMarkets', 'museums', 'architecture', 'mosques', 'castles', 'nightLife', 'beaches', 'ancientRuins']);
 cities.push(istanbul);
 
-var hanoi = new City("hanoi", 0, "", ['architecture', 'museums', 'outdoorMarkets', 'temples', 'beaches', 'nightLife', 'exoticAnimals', 'mountains']);
+var hanoi = new City("Hanoi", "Vietnam", 0, "img/cities/lineCities_hanoi.svg", ['architecture', 'museums', 'outdoorMarkets', 'temples', 'beaches', 'nightLife', 'exoticAnimals', 'mountains']);
 cities.push(hanoi);
 
-var prague = new City("prague", 0, "", ['cathedrals', 'castles', 'beer', 'legalizedMarijuana', 'concerts', 'museums', 'nightLife', 'hockey']);
+var prague = new City("Prague", "Czech Republic", 0, "img/cities/lineCities_prague.svg", ['cathedrals', 'castles', 'beer', 'legalizedMarijuana', 'concerts', 'museums', 'nightLife', 'hockey']);
 cities.push(prague);
 
-var london = new City("london", 0, "", ['artGalleries', 'museums', 'castles', 'shopping', 'concerts', 'soccer', 'multicultural', 'cathedrals']);
+var london = new City("London", "England", 0, "img/cities/lineCities_queenstown.svg", ['artGalleries', 'museums', 'castles', 'shopping', 'concerts', 'soccer', 'multicultural', 'cathedrals']);
 cities.push(london);
 
-var buenosAires = new City("buenosAires", 0, "", ['beaches', 'soccer', 'architecture', 'museums', 'nightLife', 'palmTrees', 'hiking', 'vineyards']);
+var buenosAires = new City("Buenos Aires", "Argentina", 0, "img/cities/lineCities_buenosAires.svg", ['beaches', 'soccer', 'architecture', 'museums', 'nightLife', 'palmTrees', 'hiking', 'vineyards']);
 cities.push(buenosAires);
 
-var berlin = new City("berlin", 0, "", ['beer', 'soccer', 'artGalleries', 'museums', 'castles', 'architecture', 'nightLife', 'cathedrals']);
+var berlin = new City("Berlin", "Germany", 0, "img/cities/lineCities_berlin.svg", ['beer', 'soccer', 'artGalleries', 'museums', 'castles', 'architecture', 'nightLife', 'cathedrals']);
 cities.push(berlin);
 
-var rome = new City("rome", 0, "", ['pizza', 'romance', 'ancientRuins', 'cathedrals', 'museums', 'cafes', 'soccer', 'beaches']);
+var rome = new City("Rome", "Italy", 0, "img/cities/lineCities_rome.svg", ['pizza', 'romance', 'ancientRuins', 'cathedrals', 'museums', 'cafes', 'soccer', 'beaches']);
 cities.push(rome);
 
-var reykjavik = new City("reykjavik", 0, "", ['northernLights', 'waterfalls', 'hotSprings', 'hiking', 'glaciers', 'nightLife', 'mountains', 'skiSnowboard']);
+var reykjavik = new City("Reykjavik", "Iceland", 0, "img/cities/lineCities_reykjavik.svg", ['northernLights', 'waterfalls', 'hotSprings', 'hiking', 'glaciers', 'nightLife', 'mountains', 'skiSnowboard']);
 cities.push(reykjavik);
 
-var kiev = new City("kiev", 0, "", ['museums', 'cathedrals', 'openMarkets', 'architecture', 'beer', 'nightLife', 'soccer', 'artGalleries']);
+var kiev = new City("Kiev", "Ukraine", 0, "img/cities/lineCities_kiev.svg", ['museums', 'cathedrals', 'openMarkets', 'architecture', 'beer', 'nightLife', 'soccer', 'artGalleries']);
 cities.push(kiev);
 
-var krakow = new City("krakow", 0, "", ['nightLife', 'castles', 'beer', 'concerts', 'architecture', 'cathedrals', 'soccer', 'shopping']);
+var krakow = new City("Krakow", "Poland", 0, "img/cities/lineCities_krakow.svg", ['nightLife', 'castles', 'beer', 'concerts', 'architecture', 'cathedrals', 'soccer', 'shopping']);
 cities.push(krakow);
 
-var paris = new City("paris", 0, "", ['artGalleries', 'concerts', 'cathedrals', 'museums', 'cafes', 'romance', 'shopping', 'soccer']);
+var paris = new City("Paris", "France", 0, "img/cities/lineCities_paris.svg", ['artGalleries', 'concerts', 'cathedrals', 'museums', 'cafes', 'romance', 'shopping', 'soccer']);
 cities.push(paris);
 
-var rioDeJaneiro = new City("rioDeJaneiro", 0, "", ['surfing', 'beaches', 'paragliding', 'mountains', 'palmTrees', 'soccer', 'scubaDiving']);
+var rioDeJaneiro = new City("Rio De Janeiro", "Brazil", 0, "img/cities/lineCities_rioDeJaneiro.svg", ['surfing', 'beaches', 'paragliding', 'mountains', 'palmTrees', 'soccer', 'scubaDiving']);
 cities.push(rioDeJaneiro);
 
-var capeTownCentral = new City("capeTownCentral", 0, "", ['surfing', 'beaches', 'vineyards', 'mountains', 'castles', 'outdoorMarkets', 'hiking', 'rugby']);
+var capeTownCentral = new City("Cape Town", "South Africa", 0, "img/cities/lineCities_capeTown.svg", ['surfing', 'beaches', 'vineyards', 'mountains', 'castles', 'outdoorMarkets', 'hiking', 'rugby']);
 cities.push(capeTownCentral);
 
-var budapest = new City("budapest", 0, "", ['hotSprings', 'museums', 'castles', 'nightLife', 'mountains', 'cathedrals', 'architecture', 'concerts']);
+var budapest = new City("Budapest", "Hungary", 0, "img/cities/lineCities_budapest.svg", ['hotSprings', 'museums', 'castles', 'nightLife', 'mountains', 'cathedrals', 'architecture', 'concerts']);
 cities.push(budapest);
 
-var zermatt = new City("zermatt", 0, "", ['legalizedMarijuana', 'hotSprings', 'hiking', 'skiSnowboard', 'mountains', 'glaciers', 'castles', 'shopping']);
+var zermatt = new City("Zermatt", "Switzerland", 0, "img/cities/lineCities_zermatt.svg", ['legalizedMarijuana', 'hotSprings', 'hiking', 'skiSnowboard', 'mountains', 'glaciers', 'castles', 'shopping']);
 cities.push(zermatt);
 
-var barcelona = new City("barcelona", 0, "", ['surfing', 'legalizedMarijuana', 'beaches', 'soccer', 'castles', 'cathedrals', 'nightLife', 'basketball']);
+var barcelona = new City("Barcelona", "Spain", 0, "img/cities/lineCities_barcelona.svg", ['surfing', 'legalizedMarijuana', 'beaches', 'soccer', 'castles', 'cathedrals', 'nightLife', 'basketball']);
 cities.push(barcelona);
 
-var florence = new City("florence", 0, "", ['romance', 'cathedrals', 'artGalleries', 'architecture', 'openMarkets', 'shopping', 'sailing', 'cafes']);
+var florence = new City("Florence", "Italy", 0, "img/cities/lineCities_florence.svg", ['romance', 'cathedrals', 'artGalleries', 'architecture', 'openMarkets', 'shopping', 'sailing', 'cafes']);
 cities.push(florence);
 
-var bangkok = new City("bangkok", 0, "", ['aquariums', 'museums', 'temples', 'beaches', 'exoticAnimals', 'jungles', 'nightLife', 'sailing']);
+var bangkok = new City("Bangkok", "Thailand", 0, "img/cities/lineCities_bangkok.svg", ['aquariums', 'museums', 'temples', 'beaches', 'exoticAnimals', 'jungles', 'nightLife', 'sailing']);
 cities.push(bangkok);
 
-var athens = new City("athens", 0, "", ['ancientRuins', 'mountains', 'museums', 'openMarkets', 'concerts', 'cafes', 'hiking', 'sailing']);
+var athens = new City("Athens", "Greece", 0, "img/cities/lineCities_athens.svg", ['ancientRuins', 'mountains', 'museums', 'openMarkets', 'concerts', 'cafes', 'hiking', 'sailing']);
 cities.push(athens);
 
-var queenstown = new City("queenstown", 0, "", ['paragliding', 'rugby', 'vineyards', 'nightLife', 'skiSnowboard', 'mountains', 'scubaDiving', 'safari']);
+var queenstown = new City("Queenstown", "New Zealand", 0, "img/cities/lineCities_queenstown.svg", ['paragliding', 'rugby', 'vineyards', 'nightLife', 'skiSnowboard', 'mountains', 'scubaDiving', 'safari']);
 cities.push(queenstown);
 
-var sydney = new City("sydney", 0, "", ['surfing', 'scubaDiving', 'beaches', 'concerts', 'museums', 'aquariums', 'rugby', 'multicultural']);
+var sydney = new City("Sydney", "Australia", 0, "img/cities/lineCities_sydney.svg", ['surfing', 'scubaDiving', 'beaches', 'concerts', 'museums', 'aquariums', 'rugby', 'multicultural']);
 cities.push(sydney);
 
-var vienna = new City("vienna", 0, "", ['skiSnowboard', 'beer', 'concerts', 'mountains', 'cathedrals', 'vineyards', 'castles', 'museums']);
+var vienna = new City("Vienna", "Austria", 0, "img/cities/lineCities_vienna.svg", ['skiSnowboard', 'beer', 'concerts', 'mountains', 'cathedrals', 'vineyards', 'castles', 'museums']);
 cities.push(vienna);
 
-var honolulu = new City("honolulu", 0, "", ['surfing', 'scubaDiving', 'beaches', 'romance', 'mountains', 'waterfalls', 'palmTrees', 'aquariums']);
+var honolulu = new City("Honolulu", "Hawaii", 0, "img/cities/lineCities_honolulu.svg", ['surfing', 'scubaDiving', 'beaches', 'romance', 'mountains', 'waterfalls', 'palmTrees', 'aquariums']);
 cities.push(honolulu);
 
 
@@ -306,13 +307,25 @@ function getResult(){
       winNum = cities[i].value;
     }
   }       
-     
+  
+  var winners = [];   
   for(x=0;x<cities.length;x++){
-    if(winNum == cities[x].value){
-      var winner = document.querySelector('.resultsPageImg');
-      // winner.style.background = "url(" + 
+    if(winNum == cities[x].value){ 
+      winners.push(cities[x]);
     }
   }
+
+  var winner = document.querySelector('.resultsPageImg');
+  var resultCity = document.querySelector('.resultCity');
+  var resultCountry = document.querySelector('.resultCountry');
+  winner.style.background = "url(" + winners[0].bg + ") no-repeat center center";
+  console.log(winners[0].bg);
+
+  var cityText = document.createTextNode(winners[0].name);
+  resultCity.appendChild(cityText);
+
+  var countryText = document.createTextNode(winners[0].country);
+  resultCountry.appendChild(countryText);
 }
 
 /////////////////////////////////////////////////////////
@@ -326,9 +339,11 @@ function beginApp(){
   var main = document.querySelector('.main');
   var cardsSection = document.querySelector('.cardsSection');
   var cardsContainer = document.querySelector('#cardsContainer');
+  var wrap = document.querySelector('.wrap');
   main.style.display = "none";
   cardsSection.style.display = "flex";
   cardsContainer.style.opacity = "1";
+  wrap.style.background = "#f2f2f2";
   cardCollector();
   createCards(); 
 };
@@ -382,18 +397,30 @@ function createCards(){
     cardHeader.appendChild(cardHeaderImg);
 
     cardHeaderImg.addEventListener('click', function(){
-        document.body.appendChild(getResultTestCon);
+        var preResults = document.querySelector('.resultsWrap');
+        preResults.style.display = "flex";
         returns();
     });
+
+    var cardImgArea = document.createElement('div');
+    cardImgArea.setAttribute('class', 'cardImgArea');
+    cardContainer.appendChild(cardImgArea);
     
     var cardImgSection = document.createElement('div');
     cardImgSection.setAttribute('class', 'cardImgSection');
-    cardContainer.appendChild(cardImgSection);
+    cardImgArea.appendChild(cardImgSection);
     
     var cardImgContainer = document.createElement('div');
     cardImgContainer.setAttribute('class', 'cardImgContainer');
     cardImgContainer.style.background = "url(" + activeTags[i].image + ") no-repeat center center";
     cardImgSection.appendChild(cardImgContainer);
+
+    var cardTextAbove = document.createElement('div');
+    cardTextAbove.setAttribute('class', 'cardTextAbove');
+    cardContainer.appendChild(cardTextAbove);
+
+    var textAbove = document.createTextNode("Do you want to:");
+    cardTextAbove.appendChild(textAbove);
     
     var cardText = document.createElement('div');
     cardText.setAttribute('class', 'cardText');
@@ -409,90 +436,88 @@ function createCards(){
     var cardDecisionNoCon = document.createElement('div');
     cardDecisionNoCon.setAttribute('class', 'cardDecisionNoCon');
     cardDecision.appendChild(cardDecisionNoCon);
-    cardDecisionNoCon.addEventListener('click', shift);
+    cardDecisionNoCon.addEventListener('click', translate);
 
     var cardDecisionNo = document.createElement('div');
     cardDecisionNo.setAttribute('class', 'cardDecisionNo');
     cardDecisionNoCon.appendChild(cardDecisionNo);
 
+    var cardDecisionNoText = document.createTextNode("Nope!");
+    cardDecisionNoCon.appendChild(cardDecisionNoText);
+
     var cardDecisionYesCon = document.createElement('div');
     cardDecisionYesCon.setAttribute('class', 'cardDecisionYesCon');
     cardDecision.appendChild(cardDecisionYesCon);
-     cardDecisionYesCon.addEventListener('click', filter);
+    cardDecisionYesCon.addEventListener('click', filter);
 
     var cardDecisionYes = document.createElement('div');
     cardDecisionYes.setAttribute('class', 'cardDecisionYes');
     cardDecisionYesCon.appendChild(cardDecisionYes);
 
+    var cardDecisionYesText = document.createTextNode("Yes!");
+    cardDecisionYesCon.appendChild(cardDecisionYesText);
+
   }
-
-    var getResultTestCon = document.createElement('div');
-    getResultTestCon.setAttribute('class', 'getResultTestCon');
-
-    var getResultTest = document.createElement('div');
-    getResultTest.setAttribute('class', 'getResultTest');
-    getResultTestCon.appendChild(getResultTest);
-
-    var getReTitle = document.createElement('div');
-    getReTitle.setAttribute('class', 'getReTitle');
-    getResultTest.appendChild(getReTitle);
-
-    var getReTitleText = document.createTextNode("Are you sure?");
-    getReTitle.appendChild(getReTitleText);
-
-    var getReButton1Con = document.createElement('div');
-    getReButton1Con.setAttribute('class', 'resultBtn1Con');
-    getResultTest.appendChild(getReButton1Con);
-
-    var getReButton1 = document.createElement('div');
-    getReButton1.setAttribute('class', 'resultBtn1');
-    getReButton1Con.appendChild(getReButton1);
-
-    var reBtnText1 = document.createTextNode("FIND MY DESTINATION");
-    getReButton1.appendChild(reBtnText1);
-
-    var getReButton2Con = document.createElement('div');
-    getReButton2Con.setAttribute('class', 'resultBtn2Con');
-    getResultTest.appendChild(getReButton2Con);
-
-    var getReButton2 = document.createElement('div');
-    getReButton2.setAttribute('class', 'resultBtn2');
-    getReButton2Con.appendChild(getReButton2);
-
-    var reBtnText2 = document.createTextNode("KEEP SEARCHING");
-    getReButton2.appendChild(reBtnText2);
 
 }
 
+function translate(e){
+  var noContainers = document.querySelectorAll(".cardDecisionNoCon");
+  console.log(noContainers);
+  for (i=0; i<noContainers.length; i++){
+    noContainers[i].removeEventListener("click", translate);
+  }
+  setTimeout(function(){
+    for(j=0;j<noContainers.length;j++){
+      noContainers[j].addEventListener("click", translate);
+    }
 
+  },1200);
+
+
+  shift(e);
+}
 
 function filter(ev){
     console.log("workingBefore --------------------------------");
     console.log(activeTagging[0].name);
     checkTag(activeTagging[0].name);
     console.log("workingAfter ----------------------------------");
+    
+    var yesContainers = document.querySelectorAll(".cardDecisionYesCon");
+    console.log(yesContainers);
+    for (i=0; i<yesContainers.length; i++){
+      yesContainers[i].removeEventListener("click", filter);
+    }
     setTimeout(function(){
-        shift(ev);
-    }, 200);
+      for(j=0;j<yesContainers.length;j++){
+        yesContainers[j].addEventListener("click", filter);
+      }
+    }, 1400);
+
+
+  shift(ev);
 
 }
 
 function returns(){
-    var btn1 = document.querySelector(".resultBtn1Con");
-    var tests = document.querySelector(".getResultTestCon");
+    var btnYes = document.querySelector(".buttonYes");
+    var btnNo = document.querySelector(".buttonNo");
+    var resultsWrap = document.querySelector(".resultsWrap");
+    var cardsSection = document.querySelector(".cardsSection");
     var resultsCon = document.querySelector('#resultsPage-wrap');
     var results = document.querySelector('.resultsPage');
     var cards = document.querySelectorAll('.cards');
-    console.log(cards);
 
-  btn1.addEventListener("click", function(){
-    // getResult();
-    tests.remove();
+  btnYes.addEventListener("click", function(){
+    getResult();
+    resultsWrap.style.display = "none";
+    cardsSection.style.display = "none";
     resultsCon.style.display = "flex";
-    for(i=0;i<cards.length;i++){
-      cards[i].style.display = "none";
-      console.log(cards[i]);
-    }
+  });
+
+  btnNo.addEventListener("click", function(){
+    resultsWrap.style.display = "none";
   })
 }
 
@@ -510,7 +535,7 @@ function shift(ev){
 		setTimeout(function(){
 			firstChild.remove();
 			// activeTags.splice(0,3);
-		}, 1000)
+		}, 100)
 
 		switch(counter) {
 			case 1:
@@ -556,7 +581,7 @@ function shift(ev){
 			cards[i].style.zIndex = (parseInt(cards[i].style.zIndex) + 500) + "";
 			cards[i].style.left = (parseInt(cards[i].style.left) - 5) + "%";
 			}
-		}, 800)
+		}, 10)
 
 
 		cardContainerFirst.style.opacity = "1";
@@ -589,18 +614,30 @@ function shift(ev){
 		    cardHeader.appendChild(cardHeaderImg);
 
         cardHeaderImg.addEventListener('click', function(){
-        document.body.appendChild(getResultTestCon);
-        returns();
+            var preResults = document.querySelector('.resultsWrap');
+            preResults.style.display = "flex";
+            returns();
         });
 		    
-		    var cardImgSection = document.createElement('div');
-		    cardImgSection.setAttribute('class', 'cardImgSection');
-		    cardContainer.appendChild(cardImgSection);
+        var cardImgArea = document.createElement('div');
+        cardImgArea.setAttribute('class', 'cardImgArea');
+        cardContainer.appendChild(cardImgArea);
+        
+        var cardImgSection = document.createElement('div');
+        cardImgSection.setAttribute('class', 'cardImgSection');
+        cardImgArea.appendChild(cardImgSection);
 		    
 		    var cardImgContainer = document.createElement('div');
 		    cardImgContainer.setAttribute('class', 'cardImgContainer');
 		    cardImgContainer.style.background = "url(" + activeTags[0].image + ") no-repeat center center";
 		    cardImgSection.appendChild(cardImgContainer);
+
+        var cardTextAbove = document.createElement('div');
+        cardTextAbove.setAttribute('class', 'cardTextAbove');
+        cardContainer.appendChild(cardTextAbove);
+        
+        var textAbove = document.createTextNode("Do you want to:");
+        cardTextAbove.appendChild(textAbove);
 		    
 		    var cardText = document.createElement('div');
 		    cardText.setAttribute('class', 'cardText');
@@ -616,66 +653,30 @@ function shift(ev){
 		    var cardDecisionNoCon = document.createElement('div');
 		    cardDecisionNoCon.setAttribute('class', 'cardDecisionNoCon');
 		    cardDecision.appendChild(cardDecisionNoCon);
-		    cardDecisionNoCon.addEventListener('click', shift);
+		    cardDecisionNoCon.addEventListener('click', translate);
 
 		    var cardDecisionNo = document.createElement('div');
 		    cardDecisionNo.setAttribute('class', 'cardDecisionNo');
 		    cardDecisionNoCon.appendChild(cardDecisionNo);
 
+        var cardDecisionNoText = document.createTextNode("Nope!");
+        cardDecisionNoCon.appendChild(cardDecisionNoText);
+
 		    var cardDecisionYesCon = document.createElement('div');
 		    cardDecisionYesCon.setAttribute('class', 'cardDecisionYesCon');
 		    cardDecision.appendChild(cardDecisionYesCon);
 		    cardDecisionYesCon.addEventListener('click', filter)
-        //   console.log("workingBefore");
-        //   checkTag(activeTags[0].name);
-        //   console.log("working");
-        //   shift();
-        // });
 
 		    var cardDecisionYes = document.createElement('div');
 		    cardDecisionYes.setAttribute('class', 'cardDecisionYes');
 		    cardDecisionYesCon.appendChild(cardDecisionYes);
 
+        var cardDecisionYesText = document.createTextNode("Yes!");
+        cardDecisionYesCon.appendChild(cardDecisionYesText);
+
 		    setTimeout(function(){
 		    	card.style.opacity = "1";
 		    }, 200);
-		}, 1200);
-  
-    var getResultTestCon = document.createElement('div');
-    getResultTestCon.setAttribute('class', 'getResultTestCon');
-    // document.body.appendChild(getResultTestCon);
-
-    var getResultTest = document.createElement('div');
-    getResultTest.setAttribute('class', 'getResultTest');
-    getResultTestCon.appendChild(getResultTest);
-
-    var getReTitle = document.createElement('div');
-    getReTitle.setAttribute('class', 'getReTitle');
-    getResultTest.appendChild(getReTitle);
-
-    var getReTitleText = document.createTextNode("Are you sure?");
-    getReTitle.appendChild(getReTitleText);
-
-    var getReButton1Con = document.createElement('div');
-    getReButton1Con.setAttribute('class', 'resultBtn1Con');
-    getResultTest.appendChild(getReButton1Con);
-
-    var getReButton1 = document.createElement('div');
-    getReButton1.setAttribute('class', 'resultBtn1');
-    getReButton1Con.appendChild(getReButton1);
-
-    var reBtnText1 = document.createTextNode("FIND MY DESTINATION");
-    getReButton1.appendChild(reBtnText1);
-
-    var getReButton2Con = document.createElement('div');
-    getReButton2Con.setAttribute('class', 'resultBtn2Con');
-    getResultTest.appendChild(getReButton2Con);
-
-    var getReButton2 = document.createElement('div');
-    getReButton2.setAttribute('class', 'resultBtn2');
-    getReButton2Con.appendChild(getReButton2);
-
-    var reBtnText2 = document.createTextNode("KEEP SEARCHING");
-    getReButton2.appendChild(reBtnText2);
+		}, 300);
 
 	} 
