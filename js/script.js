@@ -323,10 +323,10 @@ function getResult(){
 /////////////////////////////////////////////////////////
 
 function beginApp(){
-  var wrap = document.querySelector('.wrap');
-  var wrap2 = document.querySelector('#wrapper');
-  wrap.style.display = "none";
-  wrap2.style.display = "flex";
+  var main = document.querySelector('.main');
+  var cardsSection = document.querySelector('.cardsSection');
+  main.style.display = "none";
+  cardsSection.style.display = "flex";
   cardCollector();
   createCards(); 
 };
@@ -350,7 +350,7 @@ function createCards(){
   var zIndex = "5000";
   var cardW = "100";
   var leftPos = "0";
-  var sec = document.querySelector('#section');
+  var sec = document.querySelector('#cardsContainer');
 
   for(i=0;i<activeTags.length;i++){
     var card = document.createElement('div');
