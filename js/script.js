@@ -565,7 +565,7 @@ function shift(ev){
 
 		setTimeout(function(){
 			var card = document.createElement('div');
-			var sec = document.querySelector('#section');
+			var sec = document.querySelector('#cardsContainer');
 			card.setAttribute('class', 'cards');
 		    card.style.position = "absolute";
 		    card.style.bottom = "150px";
