@@ -1,5 +1,6 @@
 .cardsSection {
   position: absolute;
+  z-index: 3;
   height: 80%;
   width: 100%;
   display: none;
@@ -21,6 +22,136 @@
   height: 100%;
   margin: 0 auto;
  /* border: 1px solid rgb(255,255,255);*/
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
+/*  background-color: #f45962;*/
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cardContainer {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1.5s ease-in;
+}
+
+.cards:first-child .cardContainer {
+  opacity: 1;
+}
+
+.cards:first-child {
+  opacity: 1;
+  transition: all 0.5s ease-out;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 5%;
+  width: 100%;
+  height: 20%;
+}
+
+.cardHeaderImg {
+  width: 25px;
+  height: 25px;
+  background: #000;
+}
+
+.cardImgArea {
+  width: 100%;
+  height: 42.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardImgSection {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
   background-color: #f45962;
+}
+
+.cardImgContainer {
+  width: 60%;
+  height: 60%;
+  /*background: url(../img/iconSample.svg) no-repeat center center;*/
+}
+
+.cardTextAbove {
+  width: 100%;
+  height: 5%;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(200,200,200);
+}
+
+.cardText {
+  width: 100%;
+  height: 10%;
+  color: rgb(30,30,30);
+  /*font-family: 'Karla', sans-serif;*/
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.cardDecision {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 22.5%;
+  background-color: rgba(0,0,0,0.3);
+}
+
+.cardDecisionNoCon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  background-color: #dd5e6d;
+  cursor: pointer;
+  color: #fff;
+}
+
+.cardDecisionYesCon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  background-color: #f45962;
+  cursor: pointer;
+  color: #fff;
+}
+
+.cardDecisionNo {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+/*  background: url(../img/no2Sample.svg) no-repeat center center;*/
+  margin-bottom: 10px;
+  border-radius: 50%;
+}
+
+.cardDecisionYes {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+/*  background: url(../img/yesSample.svg) no-repeat center center;*/
+  margin-bottom: 10px;
+  border-radius: 50%;
 }
