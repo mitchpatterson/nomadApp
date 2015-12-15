@@ -53,31 +53,6 @@ header {
   background-color: rgb(65,50,60);
 }
 
-.cardsSection {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100%;
-  display: none;
-  align-items: center;
-  justify-content: center;
-}
-
-#cardsContainer {
-  position: relative;
-  height: 600px;
-  width: 433px;
-}
-
-.cards {
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
- /* border: 1px solid rgb(255,255,255);*/
-  transition: all 0.5s ease-in-out;
-}
-
 .getResult {
   position: absolute;
   top: 100%;
