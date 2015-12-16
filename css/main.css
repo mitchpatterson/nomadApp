@@ -51,10 +51,12 @@
 	margin-top: 20px;
 	width: 146px;
 	height: 45px;
+	cursor: pointer;
 }
 
 button {
 	outline: none;
+	cursor: pointer;
 }
 
 .main .start-button button {

@@ -7,47 +7,68 @@
 	display: none;
 	justify-content: center;
 	align-items: center;
-	background-color: rgba(0,0,0,0.8);
+	background-color: rgba(0, 0, 0, 0.8);
 	z-index: 5;
+	transition: all 2s ease-in-out;
 }
 
 .resultsCard {
-	width: 50%;
-	height: 50%;
+	width: 300px;
+	height: 350px;
 	background-color: #fff;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	border-radius: 10px;
+	transition: all 2s ease-in-out;
 }
 
 .resultsImg {
-	width: 200px;
-	height: 200px;
+	width: 140px;
+	height: 140px;
 	background: url("../img/img_luggage.svg") no-repeat center center;
 }
 
 .resultsText {
-	width: 100%;
-	height: 7.5%;
+	width: 200px;
 	text-align: center;
+	display: block;
 }
 
 .resultsText h1 {
+	font-size: 18px;
+	color: #a6a5a5;
+	margin-bottom: 10px;
 }
 
 .buttonYes {
 	width: 70%;
-	height: 10%;
+	height: 45px;
 	background-color: #f45962;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border-radius: 10px;
+	border-radius: 50px;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	transition: all 0.3s ease-in-out;
+	color: #fff;
+	font-weight: 500;
+	border: 2px solid #f45962;
+	cursor: pointer;
 }
 
-.buttonYes h1 {
-	color: white;
+.buttonYes:hover {
+	background: transparent;
+	color: #f45962;
+	font-weight: 600;
+	border: 2px solid #f45962;
+}
+
+.buttonYes:active,
+.buttonYes:focus {
+	transform: scale(0.97);
 }
 
 .buttonNo {
@@ -59,5 +80,11 @@
 }
 
 .buttonNo h1 {
+	color: #c6c6c6;
+	transition: all 0.3s ease-in-out;
+}
 
+.buttonNo h1:hover {
+	opacity: 0.5;
+	cursor: pointer;
 }

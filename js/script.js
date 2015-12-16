@@ -6,11 +6,11 @@
 /////////////////////////////////////////////////////////
 
 function City(nm, country, val, bg, tag) {
-  this.name = nm;
-  this.value = val;
-  this.bg = bg;
-  this.tags = tag;
-  this.country = country;
+	this.name = nm;
+	this.value = val;
+	this.bg = bg;
+	this.tags = tag;
+	this.country = country;
 }
 
 var cities = [];
@@ -142,7 +142,7 @@ tagsList.push(ancientRuins);
 var aquariums = new Tags("aquariums", "img/tags/aquariums.svg", "", "Visit an aquarium?");
 tagsList.push(aquariums);
 
-var architecture = new Tags("architecture", "img/tags/architecture.svg", "", "Be surrounded by beautiful architecture?");
+var architecture = new Tags("architecture", "img/tags/architecture.svg", "", "See beautiful architecture?");
 tagsList.push(architecture);
 
 var artGalleries = new Tags("artGalleries", "img/tags/artMuseums.svg", "", "Immerse yourself in art?");
@@ -214,7 +214,7 @@ tagsList.push(legalizedMarijuana);
 var mosques = new Tags("mosques", "img/tags/mosques.svg", "", "Visit mosques?");
 tagsList.push(mosques);
 
-var mountains = new Tags("mountains", "img/tags/mountains.svg", "", "Have mountains in the background?");
+var mountains = new Tags("mountains", "img/tags/mountains.svg", "", "Be around mountains?");
 tagsList.push(mountains);
 
 var multicultural = new Tags("multicultural", "img/tags/multiCultural.svg", "", "Be somewhere multicultural?");
@@ -289,43 +289,42 @@ tagsList.push(waterfalls);
 /////////////////////////////////////////////////////////
 
 function checkTag(tag) {
-  for(i=0;i<cities.length;i++){
-    for(x=0;x<cities[i].tags.length;x++){
-        if(cities[i].tags[x] == tag) {
-          cities[i].value = cities[i].value + 1;
-          console.log(cities[i].name + " = " + cities[i].value);
-        } 
-      }
-  }
+	for (i = 0; i < cities.length; i++) {
+		for (x = 0; x < cities[i].tags.length; x++) {
+			if (cities[i].tags[x] == tag) {
+				cities[i].value = cities[i].value + 1;
+				console.log(cities[i].name + " = " + cities[i].value);
+			}
+		}
+	}
 }
 
-function getResult(){
-  var winNum = 0;
-  for(i=0;i<cities.length;i++){
-    if(winNum > cities[i].value){
-    } else {
-      winNum = cities[i].value;
-    }
-  }       
-  
-  var winners = [];   
-  for(x=0;x<cities.length;x++){
-    if(winNum == cities[x].value){ 
-      winners.push(cities[x]);
-    }
-  }
+function getResult() {
+	var winNum = 0;
+	for (i = 0; i < cities.length; i++) {
+		if (winNum > cities[i].value) {} else {
+			winNum = cities[i].value;
+		}
+	}
 
-  var winner = document.querySelector('.resultsPageImg');
-  var resultCity = document.querySelector('.resultCity');
-  var resultCountry = document.querySelector('.resultCountry');
-  winner.style.background = "url(" + winners[0].bg + ") no-repeat center center";
-  console.log(winners[0].bg);
+	var winners = [];
+	for (x = 0; x < cities.length; x++) {
+		if (winNum == cities[x].value) {
+			winners.push(cities[x]);
+		}
+	}
 
-  var cityText = document.createTextNode(winners[0].name);
-  resultCity.appendChild(cityText);
+	var winner = document.querySelector('.resultsPageImg');
+	var resultCity = document.querySelector('.resultCity');
+	var resultCountry = document.querySelector('.resultCountry');
+	winner.style.background = "url(" + winners[0].bg + ") no-repeat center center";
+	console.log(winners[0].bg);
 
-  var countryText = document.createTextNode(winners[0].country);
-  resultCountry.appendChild(countryText);
+	var cityText = document.createTextNode(winners[0].name);
+	resultCity.appendChild(cityText);
+
+	var countryText = document.createTextNode(winners[0].country);
+	resultCountry.appendChild(countryText);
 }
 
 /////////////////////////////////////////////////////////
@@ -335,349 +334,349 @@ function getResult(){
 //
 /////////////////////////////////////////////////////////
 
-function beginApp(){
-  var main = document.querySelector('.main');
-  var cardsSection = document.querySelector('.cardsSection');
-  var cardsContainer = document.querySelector('#cardsContainer');
-  var wrap = document.querySelector('.wrap');
-  main.style.display = "none";
-  cardsSection.style.display = "flex";
-  cardsContainer.style.opacity = "1";
-  wrap.style.background = "#f2f2f2";
-  cardCollector();
-  createCards(); 
+function beginApp() {
+	var main = document.querySelector('.main');
+	var cardsSection = document.querySelector('.cardsSection');
+	var cardsContainer = document.querySelector('#cardsContainer');
+	var wrap = document.querySelector('.wrap');
+	main.style.display = "none";
+	cardsSection.style.display = "flex";
+	cardsContainer.style.opacity = "1";
+	wrap.style.background = "#f2f2f2";
+	cardCollector();
+	createCards();
 };
 
 var activeTags = [];
 var activeTagging = [];
 
-function cardCollector(){
-	if(tagsList.length != 0){
-		for(i=0; i < 3; i++){
+function cardCollector() {
+	if (tagsList.length != 0) {
+		for (i = 0; i < 3; i++) {
 			randNum = Math.floor(Math.random() * tagsList.length);
 			var a = tagsList.splice(randNum, 1);
 			activeTags = activeTags.concat(a);
-      activeTagging = activeTagging.concat(a);
+			activeTagging = activeTagging.concat(a);
 		}
 	} else {}
 }
 
-function createCards(){
-  var marginBoost = 0;
-  var zIndex = "5000";
-  var cardW = "100";
-  var leftPos = "0";
-  var sec = document.querySelector('#cardsContainer');
+function createCards() {
+	var marginBoost = 0;
+	var zIndex = "5000";
+	var cardW = "100";
+	var leftPos = "0";
+	var sec = document.querySelector('#cardsContainer');
 
-  for(i=0;i<activeTags.length;i++){
-    var card = document.createElement('div');
-    card.setAttribute('class', 'cards');
-    card.style.bottom = marginBoost + "px";
-    card.style.zIndex = zIndex;
-    card.style.width = cardW + "%";
-    card.style.height = cardW + "%";
-    card.style.left = leftPos + "%";
+	for (i = 0; i < activeTags.length; i++) {
+		var card = document.createElement('div');
+		card.setAttribute('class', 'cards');
+		card.style.bottom = marginBoost + "px";
+		card.style.zIndex = zIndex;
+		card.style.width = cardW + "%";
+		card.style.height = cardW + "%";
+		card.style.left = leftPos + "%";
 
-    sec.appendChild(card);
-    marginBoost = marginBoost + 75;
-    zIndex = (Number(zIndex) - 500).toString();
-    cardW = (Number(cardW) - 10).toString();
-    leftPos = (Number(leftPos) + 5).toString();
+		sec.appendChild(card);
+		marginBoost = marginBoost + 65;
+		zIndex = (Number(zIndex) - 500).toString();
+		cardW = (Number(cardW) - 10).toString();
+		leftPos = (Number(leftPos) + 5).toString();
 
-    var cardContainer = document.createElement('div');
-    cardContainer.setAttribute('class', 'cardContainer');
-    card.appendChild(cardContainer);
+		var cardContainer = document.createElement('div');
+		cardContainer.setAttribute('class', 'cardContainer');
+		card.appendChild(cardContainer);
 
-    var cardHeader = document.createElement('div');
-    cardHeader.setAttribute('class', 'cardHeader');
-    cardContainer.appendChild(cardHeader);
-    
-    var cardHeaderImg = document.createElement('div');
-    cardHeaderImg.setAttribute('class', 'cardHeaderImg');
-    cardHeader.appendChild(cardHeaderImg);
+		var cardHeader = document.createElement('div');
+		cardHeader.setAttribute('class', 'cardHeader');
+		cardContainer.appendChild(cardHeader);
 
-    cardHeaderImg.addEventListener('click', function(){
-        var preResults = document.querySelector('.resultsWrap');
-        preResults.style.display = "flex";
-        // returns();
-    });
+		var cardHeaderImg = document.createElement('div');
+		cardHeaderImg.setAttribute('class', 'cardHeaderImg');
+		cardHeader.appendChild(cardHeaderImg);
 
-    var cardImgArea = document.createElement('div');
-    cardImgArea.setAttribute('class', 'cardImgArea');
-    cardContainer.appendChild(cardImgArea);
-    
-    var cardImgSection = document.createElement('div');
-    cardImgSection.setAttribute('class', 'cardImgSection');
-    cardImgArea.appendChild(cardImgSection);
-    
-    var cardImgContainer = document.createElement('div');
-    cardImgContainer.setAttribute('class', 'cardImgContainer');
-    cardImgContainer.style.background = "url(" + activeTags[i].image + ") no-repeat center center";
-    cardImgSection.appendChild(cardImgContainer);
+		cardHeaderImg.addEventListener('click', function () {
+			var preResults = document.querySelector('.resultsWrap');
+			preResults.style.display = "flex";
+			// returns();
+		});
 
-    var cardTextAbove = document.createElement('div');
-    cardTextAbove.setAttribute('class', 'cardTextAbove');
-    cardContainer.appendChild(cardTextAbove);
+		var cardImgArea = document.createElement('div');
+		cardImgArea.setAttribute('class', 'cardImgArea');
+		cardContainer.appendChild(cardImgArea);
 
-    var textAbove = document.createTextNode("Do you want to:");
-    cardTextAbove.appendChild(textAbove);
-    
-    var cardText = document.createElement('div');
-    cardText.setAttribute('class', 'cardText');
-    cardContainer.appendChild(cardText);
+		var cardImgSection = document.createElement('div');
+		cardImgSection.setAttribute('class', 'cardImgSection');
+		cardImgArea.appendChild(cardImgSection);
 
-    var text = document.createTextNode(activeTags[i].text);
-    cardText.appendChild(text);
-    
-    var cardDecision = document.createElement('div');
-    cardDecision.setAttribute('class', 'cardDecision');
-    cardContainer.appendChild(cardDecision);
+		var cardImgContainer = document.createElement('div');
+		cardImgContainer.setAttribute('class', 'cardImgContainer');
+		cardImgContainer.style.background = "url(" + activeTags[i].image + ") no-repeat center center";
+		cardImgSection.appendChild(cardImgContainer);
 
-    var cardDecisionNoCon = document.createElement('div');
-    cardDecisionNoCon.setAttribute('class', 'cardDecisionNoCon');
-    cardDecision.appendChild(cardDecisionNoCon);
-    cardDecisionNoCon.addEventListener('click', translate);
+		var cardTextAbove = document.createElement('div');
+		cardTextAbove.setAttribute('class', 'cardTextAbove');
+		cardContainer.appendChild(cardTextAbove);
 
-    var cardDecisionNo = document.createElement('div');
-    cardDecisionNo.setAttribute('class', 'cardDecisionNo');
-    cardDecisionNoCon.appendChild(cardDecisionNo);
+		var textAbove = document.createTextNode("Do you want to:");
+		cardTextAbove.appendChild(textAbove);
 
-    var cardDecisionNoText = document.createTextNode("Nope!");
-    cardDecisionNoCon.appendChild(cardDecisionNoText);
+		var cardText = document.createElement('div');
+		cardText.setAttribute('class', 'cardText');
+		cardContainer.appendChild(cardText);
 
-    var cardDecisionYesCon = document.createElement('div');
-    cardDecisionYesCon.setAttribute('class', 'cardDecisionYesCon');
-    cardDecision.appendChild(cardDecisionYesCon);
-    cardDecisionYesCon.addEventListener('click', filter);
+		var text = document.createTextNode(activeTags[i].text);
+		cardText.appendChild(text);
 
-    var cardDecisionYes = document.createElement('div');
-    cardDecisionYes.setAttribute('class', 'cardDecisionYes');
-    cardDecisionYesCon.appendChild(cardDecisionYes);
+		var cardDecision = document.createElement('div');
+		cardDecision.setAttribute('class', 'cardDecision');
+		cardContainer.appendChild(cardDecision);
 
-    var cardDecisionYesText = document.createTextNode("Yes!");
-    cardDecisionYesCon.appendChild(cardDecisionYesText);
+		var cardDecisionNoCon = document.createElement('div');
+		cardDecisionNoCon.setAttribute('class', 'cardDecisionNoCon');
+		cardDecision.appendChild(cardDecisionNoCon);
+		cardDecisionNoCon.addEventListener('click', translate);
 
-  }
+		var cardDecisionNo = document.createElement('div');
+		cardDecisionNo.setAttribute('class', 'cardDecisionNo');
+		cardDecisionNoCon.appendChild(cardDecisionNo);
+
+		var cardDecisionNoText = document.createTextNode("Nope!");
+		cardDecisionNoCon.appendChild(cardDecisionNoText);
+
+		var cardDecisionYesCon = document.createElement('div');
+		cardDecisionYesCon.setAttribute('class', 'cardDecisionYesCon');
+		cardDecision.appendChild(cardDecisionYesCon);
+		cardDecisionYesCon.addEventListener('click', filter);
+
+		var cardDecisionYes = document.createElement('div');
+		cardDecisionYes.setAttribute('class', 'cardDecisionYes');
+		cardDecisionYesCon.appendChild(cardDecisionYes);
+
+		var cardDecisionYesText = document.createTextNode("Yes!");
+		cardDecisionYesCon.appendChild(cardDecisionYesText);
+
+	}
 
 }
 
-window.addEventListener("load", function(){
-  var btnYes = document.querySelector(".buttonYes");
-  var btnNo = document.querySelector(".buttonNo");
-  var resultsWrap = document.querySelector(".resultsWrap");
-  var cardsSection = document.querySelector(".cardsSection");
-  var resultsCon = document.querySelector('#resultsPage-wrap');
-  var results = document.querySelector('.resultsPage');
-  var cards = document.querySelectorAll('.cards');
+window.addEventListener("load", function () {
+	var btnYes = document.querySelector(".buttonYes");
+	var btnNo = document.querySelector(".buttonNo");
+	var resultsWrap = document.querySelector(".resultsWrap");
+	var cardsSection = document.querySelector(".cardsSection");
+	var resultsCon = document.querySelector('#resultsPage-wrap');
+	var results = document.querySelector('.resultsPage');
+	var cards = document.querySelectorAll('.cards');
 
-  btnYes.addEventListener("click", function(){
-    getResult();
-    resultsWrap.style.display = "none";
-    cardsSection.style.display = "none";
-    resultsCon.style.display = "flex";
-  });
+	btnYes.addEventListener("click", function () {
+		getResult();
+		resultsWrap.style.display = "none";
+		cardsSection.style.display = "none";
+		resultsCon.style.display = "flex";
+	});
 
-  btnNo.addEventListener("click", function(){
-    resultsWrap.style.display = "none";
-  });
+	btnNo.addEventListener("click", function () {
+		resultsWrap.style.display = "none";
+	});
 })
 
-function translate(e){
-  var noContainers = document.querySelectorAll(".cardDecisionNoCon");
-  console.log(noContainers);
-  for (i=0; i<noContainers.length; i++){
-    noContainers[i].removeEventListener("click", translate);
-  }
-  setTimeout(function(){
-    for(j=0;j<noContainers.length;j++){
-      noContainers[j].addEventListener("click", translate);
-    }
+function translate(e) {
+	var noContainers = document.querySelectorAll(".cardDecisionNoCon");
+	console.log(noContainers);
+	for (i = 0; i < noContainers.length; i++) {
+		noContainers[i].removeEventListener("click", translate);
+	}
+	setTimeout(function () {
+		for (j = 0; j < noContainers.length; j++) {
+			noContainers[j].addEventListener("click", translate);
+		}
 
-  },1200);
+	}, 600);
 
 
-  shift(e);
+	shift(e);
 }
 
-function filter(ev){
-    console.log("workingBefore --------------------------------");
-    console.log(activeTagging[0].name);
-    checkTag(activeTagging[0].name);
-    console.log("workingAfter ----------------------------------");
-    
-    var yesContainers = document.querySelectorAll(".cardDecisionYesCon");
-    console.log(yesContainers);
-    for (i=0; i<yesContainers.length; i++){
-      yesContainers[i].removeEventListener("click", filter);
-    }
-    setTimeout(function(){
-      for(j=0;j<yesContainers.length;j++){
-        yesContainers[j].addEventListener("click", filter);
-      }
-    }, 1400);
+function filter(ev) {
+	console.log("workingBefore --------------------------------");
+	console.log(activeTagging[0].name);
+	checkTag(activeTagging[0].name);
+	console.log("workingAfter ----------------------------------");
+
+	var yesContainers = document.querySelectorAll(".cardDecisionYesCon");
+	console.log(yesContainers);
+	for (i = 0; i < yesContainers.length; i++) {
+		yesContainers[i].removeEventListener("click", filter);
+	}
+	setTimeout(function () {
+		for (j = 0; j < yesContainers.length; j++) {
+			yesContainers[j].addEventListener("click", filter);
+		}
+	}, 600);
 
 
-  shift(ev);
+	shift(ev);
 
 }
 
 
 
 var counter = 1;
-function shift(ev){
 
-		var firstChild = ev.target.closest('.cards:first-child');
-		var cardContainerFirst = ev.target.closest('.cardContainer:first-child');
+function shift(ev) {
 
-		var cards = document.querySelectorAll('.cards');
-		var cardsContainer = document.querySelectorAll('.cardContainer');
+	var firstChild = ev.target.closest('.cards:first-child');
+	var cardContainerFirst = ev.target.closest('.cardContainer:first-child');
 
-		firstChild.style.opacity = "0";
-		setTimeout(function(){
-			firstChild.remove();
-			// activeTags.splice(0,3);
-		}, 100)
+	var cards = document.querySelectorAll('.cards');
+	var cardsContainer = document.querySelectorAll('.cardContainer');
 
-		switch(counter) {
-			case 1:
-				activeTags.splice(0,3);
-        activeTagging.splice(0,1);
+	firstChild.style.opacity = "0";
+	setTimeout(function () {
+		firstChild.remove();
+		// activeTags.splice(0,3);
+	}, 100)
 
-				if(tagsList.length != 0) {
-				for(i=0; i < 3; i++) {
-					randNum = Math.floor(Math.random() * tagsList.length);
-					var a = tagsList.splice(randNum, 1);
-					// var a = tagsList[randNum].name;
-					activeTags = activeTags.concat(a);
-          activeTagging = activeTagging.concat(a);
-					// activeTags.push(a);
-					}
-				} else {}
+	switch (counter) {
+	case 1:
+		activeTags.splice(0, 3);
+		activeTagging.splice(0, 1);
 
-				counter = 2;
-				break;
+		if (tagsList.length != 0) {
+			for (i = 0; i < 3; i++) {
+				randNum = Math.floor(Math.random() * tagsList.length);
+				var a = tagsList.splice(randNum, 1);
+				// var a = tagsList[randNum].name;
+				activeTags = activeTags.concat(a);
+				activeTagging = activeTagging.concat(a);
+				// activeTags.push(a);
+			}
+		} else {}
 
-			case 2:
-				activeTags.splice(0,1);
-        activeTagging.splice(0,1);
+		counter = 2;
+		break;
 
-				if(tagsList.length != 0) {
-				for(i=0; i < 1; i++) {
-					randNum = Math.floor(Math.random() * tagsList.length);
-					var a = tagsList.splice(randNum, 1);
-					// var a = tagsList[randNum].name;
-					activeTags = activeTags.concat(a);
-          activeTagging = activeTagging.concat(a);
-					// activeTags.push(a);
-					}
-				} else {}
-				break;
-		}
+	case 2:
+		activeTags.splice(0, 1);
+		activeTagging.splice(0, 1);
 
-		setTimeout(function(){
-			for(i=0; i<3; i++){
-			cards[i].style.bottom = (parseInt(cards[i].style.bottom) - 75) + "px";
+		if (tagsList.length != 0) {
+			for (i = 0; i < 1; i++) {
+				randNum = Math.floor(Math.random() * tagsList.length);
+				var a = tagsList.splice(randNum, 1);
+				// var a = tagsList[randNum].name;
+				activeTags = activeTags.concat(a);
+				activeTagging = activeTagging.concat(a);
+				// activeTags.push(a);
+			}
+		} else {}
+		break;
+	}
+
+	setTimeout(function () {
+		for (i = 0; i < 3; i++) {
+			cards[i].style.bottom = (parseInt(cards[i].style.bottom) - 65) + "px";
 			cards[i].style.width = (parseInt(cards[i].style.width) + 10) + "%";
 			cards[i].style.height = (parseInt(cards[i].style.height) + 10) + "%";
 			cards[i].style.zIndex = (parseInt(cards[i].style.zIndex) + 500) + "";
 			cards[i].style.left = (parseInt(cards[i].style.left) - 5) + "%";
-			}
-		}, 10)
+		}
+	}, 10)
 
 
-		cardContainerFirst.style.opacity = "1";
+	cardContainerFirst.style.opacity = "1";
 
-		
 
-		setTimeout(function(){
-			var card = document.createElement('div');
-			var sec = document.querySelector('#cardsContainer');
-			card.setAttribute('class', 'cards');
-		    card.style.bottom = "150px";
-		    card.style.zIndex = "4000";
-		    card.style.width = "80%";
-		    card.style.height = "80%";
-		    card.style.left = "10%";
-		    card.style.opacity = "0";
-		    sec.appendChild(card);
-		    // card.addEventListener('click', shift);
 
-		    var cardContainer = document.createElement('div');
-		    cardContainer.setAttribute('class', 'cardContainer');
-		    card.appendChild(cardContainer);
+	setTimeout(function () {
+		var card = document.createElement('div');
+		var sec = document.querySelector('#cardsContainer');
+		card.setAttribute('class', 'cards');
+		card.style.bottom = "130px";
+		card.style.zIndex = "4000";
+		card.style.width = "80%";
+		card.style.height = "80%";
+		card.style.left = "10%";
+		card.style.opacity = "0";
+		sec.appendChild(card);
+		// card.addEventListener('click', shift);
 
-		    var cardHeader = document.createElement('div');
-		    cardHeader.setAttribute('class', 'cardHeader');
-		    cardContainer.appendChild(cardHeader);
-		    
-		    var cardHeaderImg = document.createElement('div');
-		    cardHeaderImg.setAttribute('class', 'cardHeaderImg');
-		    cardHeader.appendChild(cardHeaderImg);
+		var cardContainer = document.createElement('div');
+		cardContainer.setAttribute('class', 'cardContainer');
+		card.appendChild(cardContainer);
 
-        cardHeaderImg.addEventListener('click', function(){
-            var preResults = document.querySelector('.resultsWrap');
-            preResults.style.display = "flex";
-            // returns();
-        });
-		    
-        var cardImgArea = document.createElement('div');
-        cardImgArea.setAttribute('class', 'cardImgArea');
-        cardContainer.appendChild(cardImgArea);
-        
-        var cardImgSection = document.createElement('div');
-        cardImgSection.setAttribute('class', 'cardImgSection');
-        cardImgArea.appendChild(cardImgSection);
-		    
-		    var cardImgContainer = document.createElement('div');
-		    cardImgContainer.setAttribute('class', 'cardImgContainer');
-		    cardImgContainer.style.background = "url(" + activeTags[0].image + ") no-repeat center center";
-		    cardImgSection.appendChild(cardImgContainer);
+		var cardHeader = document.createElement('div');
+		cardHeader.setAttribute('class', 'cardHeader');
+		cardContainer.appendChild(cardHeader);
 
-        var cardTextAbove = document.createElement('div');
-        cardTextAbove.setAttribute('class', 'cardTextAbove');
-        cardContainer.appendChild(cardTextAbove);
-        
-        var textAbove = document.createTextNode("Do you want to:");
-        cardTextAbove.appendChild(textAbove);
-		    
-		    var cardText = document.createElement('div');
-		    cardText.setAttribute('class', 'cardText');
-		    cardContainer.appendChild(cardText);
+		var cardHeaderImg = document.createElement('div');
+		cardHeaderImg.setAttribute('class', 'cardHeaderImg');
+		cardHeader.appendChild(cardHeaderImg);
 
-		    var text = document.createTextNode(activeTags[0].text);
-    		cardText.appendChild(text);
-		    
-		    var cardDecision = document.createElement('div');
-		    cardDecision.setAttribute('class', 'cardDecision');
-		    cardContainer.appendChild(cardDecision);
+		cardHeaderImg.addEventListener('click', function () {
+			var preResults = document.querySelector('.resultsWrap');
+			preResults.style.display = "flex";
+			// returns();
+		});
 
-		    var cardDecisionNoCon = document.createElement('div');
-		    cardDecisionNoCon.setAttribute('class', 'cardDecisionNoCon');
-		    cardDecision.appendChild(cardDecisionNoCon);
-		    cardDecisionNoCon.addEventListener('click', translate);
+		var cardImgArea = document.createElement('div');
+		cardImgArea.setAttribute('class', 'cardImgArea');
+		cardContainer.appendChild(cardImgArea);
 
-		    var cardDecisionNo = document.createElement('div');
-		    cardDecisionNo.setAttribute('class', 'cardDecisionNo');
-		    cardDecisionNoCon.appendChild(cardDecisionNo);
+		var cardImgSection = document.createElement('div');
+		cardImgSection.setAttribute('class', 'cardImgSection');
+		cardImgArea.appendChild(cardImgSection);
 
-        var cardDecisionNoText = document.createTextNode("Nope!");
-        cardDecisionNoCon.appendChild(cardDecisionNoText);
+		var cardImgContainer = document.createElement('div');
+		cardImgContainer.setAttribute('class', 'cardImgContainer');
+		cardImgContainer.style.background = "url(" + activeTags[0].image + ") no-repeat center center";
+		cardImgSection.appendChild(cardImgContainer);
 
-		    var cardDecisionYesCon = document.createElement('div');
-		    cardDecisionYesCon.setAttribute('class', 'cardDecisionYesCon');
-		    cardDecision.appendChild(cardDecisionYesCon);
-		    cardDecisionYesCon.addEventListener('click', filter)
+		var cardTextAbove = document.createElement('div');
+		cardTextAbove.setAttribute('class', 'cardTextAbove');
+		cardContainer.appendChild(cardTextAbove);
 
-		    var cardDecisionYes = document.createElement('div');
-		    cardDecisionYes.setAttribute('class', 'cardDecisionYes');
-		    cardDecisionYesCon.appendChild(cardDecisionYes);
+		var textAbove = document.createTextNode("Do you want to:");
+		cardTextAbove.appendChild(textAbove);
 
-        var cardDecisionYesText = document.createTextNode("Yes!");
-        cardDecisionYesCon.appendChild(cardDecisionYesText);
+		var cardText = document.createElement('div');
+		cardText.setAttribute('class', 'cardText');
+		cardContainer.appendChild(cardText);
 
-		    setTimeout(function(){
-		    	card.style.opacity = "1";
-		    }, 200);
-		}, 300);
+		var text = document.createTextNode(activeTags[0].text);
+		cardText.appendChild(text);
 
-	} 
+		var cardDecision = document.createElement('div');
+		cardDecision.setAttribute('class', 'cardDecision');
+		cardContainer.appendChild(cardDecision);
+
+		var cardDecisionNoCon = document.createElement('div');
+		cardDecisionNoCon.setAttribute('class', 'cardDecisionNoCon');
+		cardDecision.appendChild(cardDecisionNoCon);
+		cardDecisionNoCon.addEventListener('click', translate);
+
+		var cardDecisionNo = document.createElement('div');
+		cardDecisionNo.setAttribute('class', 'cardDecisionNo');
+		cardDecisionNoCon.appendChild(cardDecisionNo);
+
+		var cardDecisionNoText = document.createTextNode("Nope!");
+		cardDecisionNoCon.appendChild(cardDecisionNoText);
+
+		var cardDecisionYesCon = document.createElement('div');
+		cardDecisionYesCon.setAttribute('class', 'cardDecisionYesCon');
+		cardDecision.appendChild(cardDecisionYesCon);
+		cardDecisionYesCon.addEventListener('click', filter)
+
+		var cardDecisionYes = document.createElement('div');
+		cardDecisionYes.setAttribute('class', 'cardDecisionYes');
+		cardDecisionYesCon.appendChild(cardDecisionYes);
+
+		var cardDecisionYesText = document.createTextNode("Yes!");
+		cardDecisionYesCon.appendChild(cardDecisionYesText);
+
+
+		card.style.opacity = "1";
+	}, 300);
+
+}
