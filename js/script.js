@@ -299,6 +299,7 @@ function checkTag(tag) {
 	}
 }
 
+var winners = [];
 function getResult() {
 	var winNum = 0;
 	for (i = 0; i < cities.length; i++) {
@@ -307,7 +308,6 @@ function getResult() {
 		}
 	}
 
-	var winners = [];
 	for (x = 0; x < cities.length; x++) {
 		if (winNum == cities[x].value) {
 			winners.push(cities[x]);
