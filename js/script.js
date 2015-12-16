@@ -280,8 +280,8 @@ tagsList.push(waterfalls);
 
 /////////////////////////////////////////////////////////
 //
-// checkTag function queries through all city objects in 
-//		the cities array and then queries through all of 
+// checkTag function queries through all city objects in
+//		the cities array and then queries through all of
 //		the tags for each city and compares the tags with
 //		a specified tag. If a tag is a match for a city,
 //		then the city gets a value increase of 1
@@ -329,7 +329,7 @@ function getResult() {
 
 /////////////////////////////////////////////////////////
 //
-// functions below are used to attach to cards and are 
+// functions below are used to attach to cards and are
 //		triggered on swipe events
 //
 /////////////////////////////////////////////////////////
@@ -515,6 +515,17 @@ function filter(ev) {
 		}
 	}, 600);
 
+	console.log(activeTagging.length);
+	console.log(activeTagging[0]);
+	if(activeTagging.length == 1){
+		var resultsWrap = document.querySelector(".resultsWrap");
+		var cardsSection = document.querySelector(".cardsSection");
+		var resultsCon = document.querySelector('#resultsPage-wrap');
+		getResult();
+		resultsWrap.style.display = "none";
+		cardsSection.style.display = "none";
+		resultsCon.style.display = "flex";
+	}
 
 	shift(ev);
 
