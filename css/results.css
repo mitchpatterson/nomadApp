@@ -50,14 +50,41 @@
 }
 
 .weatherForcast {
+	width: 80%;
+	height: 30%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	margin: 0 auto;
+}
+
+.weatherIconContainer {
 	width: 100%;
-	height: 20%;
-	background-color: lightgrey;
+	height: 50%;
+	display: flex;
+	flex-direction: row;
+}
+
+.weatherIcon {
+	width: 20%;
+	height: 100%;
+}
+
+.dayOfWeekContainer{
+	width: 100%;
+	height: 25%;
+	background-color: red;
+}
+
+.degreesContainer {
+	width: 100%;
+	height: 25%;
+	background-color: green;
 }
 
 .tripButtonContainer {
 	width: 100%;
-	height: 15%;
+	height: 5%;
 	background-color: grey;
 }
 
