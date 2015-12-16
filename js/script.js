@@ -399,7 +399,7 @@ function createCards(){
     cardHeaderImg.addEventListener('click', function(){
         var preResults = document.querySelector('.resultsWrap');
         preResults.style.display = "flex";
-        returns();
+        // returns();
     });
 
     var cardImgArea = document.createElement('div');
@@ -461,6 +461,27 @@ function createCards(){
 
 }
 
+window.addEventListener("load", function(){
+  var btnYes = document.querySelector(".buttonYes");
+  var btnNo = document.querySelector(".buttonNo");
+  var resultsWrap = document.querySelector(".resultsWrap");
+  var cardsSection = document.querySelector(".cardsSection");
+  var resultsCon = document.querySelector('#resultsPage-wrap');
+  var results = document.querySelector('.resultsPage');
+  var cards = document.querySelectorAll('.cards');
+
+  btnYes.addEventListener("click", function(){
+    getResult();
+    resultsWrap.style.display = "none";
+    cardsSection.style.display = "none";
+    resultsCon.style.display = "flex";
+  });
+
+  btnNo.addEventListener("click", function(){
+    resultsWrap.style.display = "none";
+  });
+})
+
 function translate(e){
   var noContainers = document.querySelectorAll(".cardDecisionNoCon");
   console.log(noContainers);
@@ -500,26 +521,6 @@ function filter(ev){
 
 }
 
-function returns(){
-    var btnYes = document.querySelector(".buttonYes");
-    var btnNo = document.querySelector(".buttonNo");
-    var resultsWrap = document.querySelector(".resultsWrap");
-    var cardsSection = document.querySelector(".cardsSection");
-    var resultsCon = document.querySelector('#resultsPage-wrap');
-    var results = document.querySelector('.resultsPage');
-    var cards = document.querySelectorAll('.cards');
-
-  btnYes.addEventListener("click", function(){
-    getResult();
-    resultsWrap.style.display = "none";
-    cardsSection.style.display = "none";
-    resultsCon.style.display = "flex";
-  });
-
-  btnNo.addEventListener("click", function(){
-    resultsWrap.style.display = "none";
-  })
-}
 
 
 var counter = 1;
@@ -616,7 +617,7 @@ function shift(ev){
         cardHeaderImg.addEventListener('click', function(){
             var preResults = document.querySelector('.resultsWrap');
             preResults.style.display = "flex";
-            returns();
+            // returns();
         });
 		    
         var cardImgArea = document.createElement('div');
