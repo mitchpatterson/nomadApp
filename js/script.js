@@ -187,8 +187,8 @@ tagsList.push(exoticAnimals);
 var fashion = new Tags("fashion", "img/tags/fashion.svg", "", "Take in fashion culture?");
 tagsList.push(fashion);
 
-var football = new Tags("fashion", "img/tags/football.svg", "", "Watch a football game?");
-tagsList.push(fashion);
+var football = new Tags("football", "img/tags/football.svg", "", "Watch a football game?");
+tagsList.push(football);
 
 var glaciers = new Tags("glaciers", "img/tags/glaciers.svg", "", "Visit glaciers?");
 tagsList.push(glaciers);
@@ -479,6 +479,7 @@ window.addEventListener("load", function () {
 			resultsWrap.style.display = "none";
 			cardsSection.style.display = "none";
 			resultsCon.style.display = "flex";
+			results.style.opacity = "1";
 	});
 
 	btnNo.addEventListener("click", function () {
@@ -505,6 +506,15 @@ function translate(e) {
 
 	}, 600);
 
+	if(activeTagging.length == 1){
+		var resultsWrap = document.querySelector(".resultsWrap");
+		var cardsSection = document.querySelector(".cardsSection");
+		var resultsCon = document.querySelector('#resultsPage-wrap');
+		getResult();
+		resultsWrap.style.display = "none";
+		cardsSection.style.display = "none";
+		resultsCon.style.display = "flex";
+	}
 
 	setTimeout(function(){
 		shift(e);
@@ -512,10 +522,10 @@ function translate(e) {
 }
 
 function filter(ev) {
-	console.log("workingBefore --------------------------------");
-	console.log(activeTagging[0].name);
+	// console.log("workingBefore --------------------------------");
+	// console.log(activeTagging[0].name);
 	checkTag(activeTagging[0].name);
-	console.log("workingAfter ----------------------------------");
+	// console.log("workingAfter ----------------------------------");
 
 	var cards = document.querySelectorAll('.cards');
 	cards[0].className += ' rotateRight';
@@ -534,8 +544,6 @@ function filter(ev) {
 		}
 	}, 600);
 
-	console.log(activeTagging.length);
-	console.log(activeTagging[0]);
 	if(activeTagging.length == 1){
 		var resultsWrap = document.querySelector(".resultsWrap");
 		var cardsSection = document.querySelector(".cardsSection");
