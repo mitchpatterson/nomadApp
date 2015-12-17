@@ -107,7 +107,7 @@ function getDegrees(data){
   var degrees = [degrees1, degrees2, degrees3, degrees4, degrees5];
 
   for(i=0; i<5; i++){
-    var currentDeg = document.createTextNode(data.list[i].temp.day + "\xB0" + 'C ');
+    var currentDeg = document.createTextNode(Math.floor(data.list[i].temp.day) + "\xB0" + 'C ');
     degrees[i].appendChild(currentDeg);
   }
 }
