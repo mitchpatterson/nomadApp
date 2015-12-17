@@ -475,11 +475,10 @@ window.addEventListener("load", function () {
 	var cards = document.querySelectorAll('.cards');
 
 	btnYes.addEventListener("click", function () {
-		setTimeout(function(){
 			getResult();
 			resultsWrap.style.display = "none";
 			cardsSection.style.display = "none";
-			resultsCon.style.display = "flex";}, 500);
+			resultsCon.style.display = "flex";
 	});
 
 	btnNo.addEventListener("click", function () {
