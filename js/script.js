@@ -325,6 +325,10 @@ function getResult() {
 
 	var countryText = document.createTextNode(winners[0].country);
 	resultCountry.appendChild(countryText);
+
+	setup();
+	weekForecast();
+	weekDegrees();
 }
 
 /////////////////////////////////////////////////////////
