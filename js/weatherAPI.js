@@ -63,6 +63,36 @@ function getData(data){
   }
 }
 
+function weekDays(){
+
+  $.getJSON("http://api.openweathermap.org/data/2.5/forecast/daily?q=" + winners[0].name + "&appid=9b021461b994f10f96e2234841d14255&units=metric", getDay)
+}
+
+function getDay(data) {
+
+  var day1 = document.querySelector('#day1');
+  var day2 = document.querySelector('#day2');
+  var day3 = document.querySelector('#day3');
+  var day4 = document.querySelector('#day4');
+  var day5 = document.querySelector('#day5');
+
+  days = [day1, day2, day3, day4, day5];
+
+  for(i=0;i<5;i++){
+    var timestamp = data.list[i].dt; // UNIX timestamp in seconds
+    var time = new Date();
+    time.setTime(timestamp*1000); // javascript timestamps are in milliseconds
+    time.toUTCString();
+
+    week = ["Mon", "Tues", "Wed", "Thur", "Fri", "Sat", "Sun"];
+
+    var dayText = document.createTextNode(week[time.getDay()]);
+    days[i].appendChild(dayText);
+  }
+
+}
+
+
 function weekDegrees(){
   $.getJSON("http://api.openweathermap.org/data/2.5/forecast/daily?q=" + winners[0].name + "&appid=9b021461b994f10f96e2234841d14255&units=metric", getDegrees)
 }

@@ -328,6 +328,7 @@ function getResult() {
 
 	setup();
 	weekForecast();
+	weekDays();
 	weekDegrees();
 }
 
