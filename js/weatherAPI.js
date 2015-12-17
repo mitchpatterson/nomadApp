@@ -6,12 +6,12 @@ function setup() {
 
 function gotData(data) {
 	var currentWeatherDiv = document.querySelector('.currentWeather');
-
+	var curDeg = document.querySelector('.curDeg');
 	var currentDeg = document.createTextNode(Math.floor(data.main.temp) + "\xB0" + 'C ');
-	currentWeatherDiv.appendChild(currentDeg);
-
+	curDeg.appendChild(currentDeg);
+	var curWeath = document.querySelector('.curWeath');
 	var currentCondition = document.createTextNode(data.weather[0].main);
-	currentWeatherDiv.appendChild(currentCondition);
+	curWeath.appendChild(currentCondition);
 
 	console.log("The current weather in " + data.name + " is " + data.main.temp);
 	console.log(data.weather[0].main);
