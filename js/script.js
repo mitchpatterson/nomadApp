@@ -475,10 +475,11 @@ window.addEventListener("load", function () {
 	var cards = document.querySelectorAll('.cards');
 
 	btnYes.addEventListener("click", function () {
-		getResult();
-		resultsWrap.style.display = "none";
-		cardsSection.style.display = "none";
-		resultsCon.style.display = "flex";
+		setTimeout(function(){
+			getResult();
+			resultsWrap.style.display = "none";
+			cardsSection.style.display = "none";
+			resultsCon.style.display = "flex";}, 500);
 	});
 
 	btnNo.addEventListener("click", function () {
@@ -488,19 +489,27 @@ window.addEventListener("load", function () {
 
 function translate(e) {
 	var noContainers = document.querySelectorAll(".cardDecisionNoCon");
-	console.log(noContainers);
+	var yesContainers = document.querySelectorAll(".cardDecisionYesCon");
+
+	var cards = document.querySelectorAll('.cards');
+	cards[0].className += ' rotateLeft';
+
 	for (i = 0; i < noContainers.length; i++) {
 		noContainers[i].removeEventListener("click", translate);
+		yesContainers[i].removeEventListener("click", filter);
 	}
 	setTimeout(function () {
 		for (j = 0; j < noContainers.length; j++) {
 			noContainers[j].addEventListener("click", translate);
+			yesContainers[j].addEventListener("click", filter);
 		}
 
 	}, 600);
 
 
-	shift(e);
+	setTimeout(function(){
+		shift(e);
+	}, 100);
 }
 
 function filter(ev) {
@@ -509,14 +518,20 @@ function filter(ev) {
 	checkTag(activeTagging[0].name);
 	console.log("workingAfter ----------------------------------");
 
+	var cards = document.querySelectorAll('.cards');
+	cards[0].className += ' rotateRight';
+
+	var noContainers = document.querySelectorAll(".cardDecisionNoCon");
 	var yesContainers = document.querySelectorAll(".cardDecisionYesCon");
 	console.log(yesContainers);
 	for (i = 0; i < yesContainers.length; i++) {
 		yesContainers[i].removeEventListener("click", filter);
+		noContainers[i].removeEventListener("click", translate);
 	}
 	setTimeout(function () {
 		for (j = 0; j < yesContainers.length; j++) {
 			yesContainers[j].addEventListener("click", filter);
+			noContainers[j].addEventListener("click", translate);
 		}
 	}, 600);
 
@@ -532,8 +547,9 @@ function filter(ev) {
 		resultsCon.style.display = "flex";
 	}
 
-	shift(ev);
-
+	setTimeout(function(){
+		shift(ev);
+	}, 100);
 }
 
 
