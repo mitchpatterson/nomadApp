@@ -10,9 +10,11 @@
 }
 
 .resultsPage {
-	width: 40%;
-	height: 50%;
+	height: 440px;
+	width: 287px;
 	background-color: white;
+	border-radius: 5px;
+	overflow: hidden;
 }
 
 .resultsPageHeader {
@@ -30,7 +32,6 @@
 }
 
 .resultCountry {
-	width: 100%;
 	height: 50%;
 	display: flex;
 	align-items: center;
@@ -38,13 +39,11 @@
 }
 
 .resultsPageImg {
-	width: 100%;
 	height: 30%;
 	background-size: 100%;
 }
 
 .currentWeather {
-	width: 100%;
 	height: 15%;
 	display: flex;
 	justify-content: center;
@@ -52,7 +51,6 @@
 }
 
 .weatherForcast {
-	width: 80%;
 	height: 30%;
 	display: flex;
 	justify-content: center;
@@ -61,8 +59,8 @@
 }
 
 .weatherIconContainer {
-	width: 100%;
-	height: 50%;
+	padding: 0 20px;
+	box-sizing: border-box;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -70,14 +68,14 @@
 }
 
 .weatherIcon {
-	width: 25px;
-	height: 25px;
-	background-repeat: none;
-	margin: 0 20px;
+	min-width: 58px;
+	min-height: 25px;
+	background-repeat: no-repeat;
+	box-sizing: border-box;
+	background-position: center;
 }
 
-.dayOfWeekContainer{
-	width: 100%;
+.dayOfWeekContainer {
 	height: 25%;
 	display: flex;
 	flex-direction: row;
@@ -86,7 +84,7 @@
 }
 
 .day {
-	width: 20%;
+	width: 75px;
 	height: 100%;
 	display: flex;
 	align-items: center;
@@ -116,5 +114,4 @@
 	background-color: grey;
 }
 
-.tripButton {
-}
+.tripButton {}

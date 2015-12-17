@@ -23,6 +23,7 @@
 	height: 100%;
 	background: #f45962;
 	border-radius: 50%;
+	cursor: pointer;
 }
 
 .social ul li .share .icon {
@@ -46,12 +47,8 @@
 	transition: all 0.3s ease-in-out;
 	display: none;
 	opacity: 0;
-}
-
-.social ul li .facebook .icon {
-	width: 100%;
-	height: 100%;
-	background: url(../img/img_facebook_red.svg) 50% 50% / 18px 20px no-repeat;
+	background: url(../img/img_facebook_red.svg) 50% 50% / 22px 20px no-repeat;
+	cursor: pointer;
 }
 
 .social ul li .google {
@@ -63,12 +60,8 @@
 	transition: all 0.3s ease-in-out;
 	display: none;
 	opacity: 0;
-}
-
-.social ul li .google .icon {
-	width: 100%;
-	height: 100%;
 	background: url(../img/img_google_red.svg) 50% 50% / 22px 20px no-repeat;
+	cursor: pointer;
 }
 
 .social ul li .twitter {
@@ -80,10 +73,18 @@
 	transition: all 0.3s ease-in-out;
 	display: none;
 	opacity: 0;
+	background: url(../img/img_twitter_red.svg) 50% 50% / 22px 20px no-repeat;
+	cursor: pointer;
 }
 
-.social ul li .twitter .icon {
-	width: 100%;
-	height: 100%;
-	background: url(../img/img_twitter_red.svg) 50% 50% / 18px 20px no-repeat;
+.social ul li .google:hover {
+	background: #f45962 url(../img/google_white.svg) 50% 50% / 22px 20px no-repeat;
+}
+
+.social ul li .twitter:hover {
+	background: #f45962 url(../img/twitter_white.svg) 50% 50% / 22px 20px no-repeat;
+}
+
+.social ul li .facebook:hover {
+	background: #f45962 url(../img/facebook_white.svg) 50% 50% / 22px 20px no-repeat;
 }
