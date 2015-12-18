@@ -11,7 +11,7 @@
 
 .resultsPage {
 	height: 510px;
-	width: 347px;
+	width: 310px;
 	background-color: white;
 	border-radius: 5px;
 	overflow: hidden;
@@ -32,7 +32,7 @@
 	align-items: center;
 	justify-content: center;
 	font-size: 32px;
-	margin-top: 40px;
+	margin-top: 50px;
 }
 
 .resultCountry {
@@ -44,7 +44,7 @@
 
 .resultsPageImg {
 	margin-top: -40px;
-	height: 35%;
+	height: 32.5%;
 	background-size: 100%;
 }
 
@@ -63,11 +63,27 @@
 .currentWeather .curWeath {
 	margin-left: 10px;
 	font-size: 18px;
-	font-weight: 600;
+	font-weight: 500;
+}
+
+.divider {
+	width: 226px;
+	height: 1.5px;
+	margin: 0 auto;
+	background: #f15861;
+	margin-top: 20px;
+}
+
+.weather_heading {
+	margin: 15px 0;
+	text-align: center;
+}
+
+.weather_heading h1 {
+	font-size: 12px;
 }
 
 .weatherForcast {
-	height: 30%;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
@@ -75,7 +91,6 @@
 }
 
 .weatherIconContainer {
-	padding: 0 20px;
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: row;
@@ -89,14 +104,17 @@
 	background-repeat: no-repeat;
 	box-sizing: border-box;
 	background-position: center;
+	background-size: 18px;
 }
 
 .dayOfWeekContainer {
-	height: 25%;
+	height: 35%;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
+	margin-top: 10px;
+	font-size: 14px;
 }
 
 .day {
@@ -110,10 +128,12 @@
 
 .degreesContainer {
 	width: 100%;
+	height: 30px;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
+	font-size: 16px;
 }
 
 .degrees {

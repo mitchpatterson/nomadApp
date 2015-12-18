@@ -16,9 +16,6 @@
 		.main {
 			width: 100%;
 		}
-		.social {
-			visibility: hidden;
-		}
 		footer {
 			padding: 0 100px;
 		}
@@ -36,6 +33,9 @@
 	
 	@media only screen and (max-width: 510px) {
 		.primary-nav ul li {
+			visibility: hidden;
+		}
+		.social {
 			visibility: hidden;
 		}
 	}

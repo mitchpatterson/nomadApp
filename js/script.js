@@ -300,6 +300,7 @@ function checkTag(tag) {
 }
 
 var winners = [];
+
 function getResult() {
 	var winNum = 0;
 	for (i = 0; i < cities.length; i++) {
@@ -352,9 +353,9 @@ function beginApp() {
 	createCards();
 
 	var cards = document.querySelectorAll('.cards');
-	for(i=0; i<cards.length; i++){
-	cards[i].addEventListener("touchstart", respondToStart);
-	cards[i].addEventListener("touchmove", respondToMove);
+	for (i = 0; i < cards.length; i++) {
+		cards[i].addEventListener("touchstart", respondToStart);
+		cards[i].addEventListener("touchmove", respondToMove);
 	}
 };
 
@@ -410,7 +411,6 @@ function createCards() {
 		cardHeaderImg.addEventListener('click', function () {
 			var preResults = document.querySelector('.resultsWrap');
 			preResults.style.display = "flex";
-			// returns();
 		});
 
 		var cardImgArea = document.createElement('div');
@@ -482,13 +482,13 @@ window.addEventListener("load", function () {
 	var cards = document.querySelectorAll('.cards');
 
 	btnYes.addEventListener("click", function () {
-			getResult();
-			resultsWrap.style.display = "none";
-			cardsSection.style.display = "none";
-			resultsCon.style.display = "flex";
-			setTimeout(function(){
-				results.style.opacity = "1";
-			}, 100);
+		getResult();
+		resultsWrap.style.display = "none";
+		cardsSection.style.display = "none";
+		resultsCon.style.display = "flex";
+		setTimeout(function () {
+			results.style.opacity = "1";
+		}, 100);
 	});
 
 	btnNo.addEventListener("click", function () {
@@ -517,7 +517,7 @@ function translate(e) {
 
 	console.log(activeTagging.length);
 
-	if(activeTagging.length == 1){
+	if (activeTagging.length == 1) {
 		var resultsWrap = document.querySelector(".resultsWrap");
 		var cardsSection = document.querySelector(".cardsSection");
 		var resultsCon = document.querySelector('#resultsPage-wrap');
@@ -526,12 +526,12 @@ function translate(e) {
 		resultsWrap.style.display = "none";
 		cardsSection.style.display = "none";
 		resultsCon.style.display = "flex";
-		setTimeout(function(){
+		setTimeout(function () {
 			results.style.opacity = "1";
 		}, 100);
 	}
 
-	setTimeout(function(){
+	setTimeout(function () {
 		shift(e);
 	}, 100);
 }
@@ -559,9 +559,9 @@ function filter(ev) {
 		}
 	}, 600);
 
-		console.log(activeTagging.length);
+	console.log(activeTagging.length);
 
-	if(activeTagging.length == 1){
+	if (activeTagging.length == 1) {
 		var resultsWrap = document.querySelector(".resultsWrap");
 		var cardsSection = document.querySelector(".cardsSection");
 		var resultsCon = document.querySelector('#resultsPage-wrap');
@@ -570,12 +570,12 @@ function filter(ev) {
 		resultsWrap.style.display = "none";
 		cardsSection.style.display = "none";
 		resultsCon.style.display = "flex";
-		setTimeout(function(){
+		setTimeout(function () {
 			results.style.opacity = "1";
 		}, 100);
 	}
 
-	setTimeout(function(){
+	setTimeout(function () {
 		shift(ev);
 	}, 100);
 }
@@ -676,6 +676,8 @@ function shift(ev) {
 		var cardHeaderImg = document.createElement('div');
 		cardHeaderImg.setAttribute('class', 'cardHeaderImg');
 		cardHeader.appendChild(cardHeaderImg);
+
+
 
 		cardHeaderImg.addEventListener('click', function () {
 			var preResults = document.querySelector('.resultsWrap');
