@@ -408,6 +408,13 @@ function createCards() {
 		cardHeaderImg.setAttribute('class', 'cardHeaderImg');
 		cardHeader.appendChild(cardHeaderImg);
 
+		var cardResultText = document.createElement('div');
+		cardResultText.setAttribute('class', 'cardResultText');
+		cardContainer.appendChild(cardResultText);
+
+		var resultText = document.createTextNode("Results");
+		cardResultText.appendChild(resultText);
+
 		cardHeaderImg.addEventListener('click', function () {
 			var preResults = document.querySelector('.resultsWrap');
 			preResults.style.display = "flex";
@@ -677,7 +684,12 @@ function shift(ev) {
 		cardHeaderImg.setAttribute('class', 'cardHeaderImg');
 		cardHeader.appendChild(cardHeaderImg);
 
+		var cardResultText = document.createElement('div');
+		cardResultText.setAttribute('class', 'cardResultText');
+		cardContainer.appendChild(cardResultText);
 
+		var resultText = document.createTextNode("Results");
+		cardResultText.appendChild(resultText);
 
 		cardHeaderImg.addEventListener('click', function () {
 			var preResults = document.querySelector('.resultsWrap');
